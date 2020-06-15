@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+/* Auth::routes(); */
 
-Route::get('/', 'GuestController@index')->name('home'); //Questo è il nome della rotta
+Route::get('/', 'GuestController@home')->name('home'); //Questo è il nome della rotta

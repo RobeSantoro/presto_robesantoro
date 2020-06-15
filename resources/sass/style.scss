@@ -1,3 +1,28 @@
-h1 {
-    font-size: 25px;
+main {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background: #ffffff;
+  background-image: url('/img/hero-image.jpg');  /* fallback */
+  background-image: linear-gradient( to bottom, rgba(143, 143, 143, .5),rgba(255, 255, 255, .5) );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroText {
+  font-size: 10rem;
+  line-height: .8;
+}
+
+.blue {
+  color: $blue;
+}
+
+.gray {
+  color: $gray;
 }
