@@ -33,14 +33,16 @@
                 
                 <label id="keywords" class="d-none" for="exampleFormControlSelect1">Inserisci parole chiave</label>
                 <input class="form-control form-control-lg" type="text" placeholder="Cerca su Presto.it">
-                
-
-                
+                            
                 <button type="button" class="btn btn-primary btn-lg mt-4 px-5">Cerca</button>
                 <button type="button" class="btn btn-secondary btn-lg mt-4">Avanzata</button>
-                
+                               
+                <a href="{{ route('contacts') }}" class="d-block mt-3">Contattaci</a>
             </div>
-            <div class="col-2"></div>            
+
+            <div class="col-2"></div>        
+
+            
         </div>
     </div>
 </header>
