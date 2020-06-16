@@ -10928,6 +10928,10 @@ a.text-dark:focus {
   }
 }
 
+* {
+  transition: 0.2s;
+}
+
 main {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -10936,18 +10940,23 @@ main {
 .masthead {
   height: 100vh;
   min-height: 500px;
-  background: #ffffff;
-  background-image: url("/img/hero-image.jpg");
-  /* fallback */
-  background-image: linear-gradient(to bottom, rgba(143, 143, 143, 0.5), rgba(255, 255, 255, 0.5));
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #3490dc), url("/img/hero-image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .heroText {
-  font-size: 10rem;
+  font-size: 30vw;
   line-height: 0.8;
+}
+
+@media (min-width: 576px) {
+  .heroText {
+    font-size: 10rem;
+    line-height: 0.8;
+  }
 }
 
 .blue {

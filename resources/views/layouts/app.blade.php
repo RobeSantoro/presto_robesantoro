@@ -24,6 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
+
 <body>
     <div id="app">
 
@@ -32,9 +33,10 @@
         <main class="h-100">
             @yield('content')
         </main>
-
+        
         <!-- Aggiungere Footer -->
 
     </div>
 </body>
+
 </html>

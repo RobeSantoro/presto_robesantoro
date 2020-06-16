@@ -37227,6 +37227,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./myScript */ "./resources/js/myScript.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37271,6 +37273,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/myScript.js":
+/*!**********************************!*\
+  !*** ./resources/js/myScript.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var btnAdvanced = document.querySelector("#btnAdvanced");
+var Advanced = btnAdvanced.addEventListener('click', function () {
+  Advanced.classList.remove("d-none"); //console.log(Advanced.classList);
+
+  /* if (Advanced. == "") {
+      Advanced.classList.add("d-none");
+  } */
+});
+var CategorySelector = document.querySelector("#CategorySelector");
+console.log(CategorySelector);
 
 /***/ }),
 

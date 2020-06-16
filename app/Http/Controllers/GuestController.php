@@ -8,16 +8,14 @@ use App\Mail\ContactMail;
 
 class GuestController extends Controller
 {
-    public function home(){
-        
-        return view('home'); //Questo è il nome della vista blade /resources/views/home.blade.php
-        
+    public function home(){   
+
+        return view('home'); //Questo è il nome della vista blade /resources/views/home.blade.php  
+             
     }
     
-    public function contacts() {
-        
-        return view('contacts'); 
-        
+    public function contacts() {        
+        return view('contacts');         
     }
     
     public function submit(Request $request) {
