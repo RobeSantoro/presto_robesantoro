@@ -2,9 +2,11 @@
   transition: .2s;
 }
 
-main {
+html, body, main {
+  height: 100%;
+  background-color:$blue;
   padding-top: 0px !important;
-  padding-bottom: 0px !important;
+  padding-bottom: 0px !important;   
 }
 
 .masthead {
@@ -12,28 +14,17 @@ main {
   min-height: 500px;
   background-color: #ffffff;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), $blue),
-                    url('/img/hero-image.jpg');
+  url('/img/hero-image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.heroText {
-    font-size: 30vw;
-    line-height: .8;
+.display-logo {
+    font-size: 10vh;
+    font-weight: 300;
+    line-height: 1.2;
 }
-
-
-$breakpoint-sm : 576px;
-@media (min-width: $breakpoint-sm) {
-
-.heroText {
-    font-size: 10rem;
-    line-height: .8;
-    }
-
-}
-
 
 .blue {
   color: $blue;
@@ -42,3 +33,12 @@ $breakpoint-sm : 576px;
 .gray {
   color: $gray;
 }
+
+.white {
+  color: $white;
+}
+
+#sticky-footer {
+  flex: 1 0 auto;
+}
+

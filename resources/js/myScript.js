@@ -1,24 +1,20 @@
 
-let btnAdvanced = document.querySelector("#btnAdvanced");
-let Advanced = 
+let AdvancedBtn = document.querySelector("#AdvancedBtn");
+let AdvancedFormGroup = document.querySelector("#AdvancedFormGroup");
+let SearchInput = document.querySelector("#SearchInput");
+let SearchLabel = document.querySelector("#SearchLabel");
 
 
-btnAdvanced.addEventListener('click', () => {
+
+
+AdvancedBtn.addEventListener('click', () => {
     
-    Advanced.classList.remove("d-none");
-
-    //console.log(Advanced.classList);
-
-    /* if (Advanced. == "") {
-        Advanced.classList.add("d-none");
-    } */
+    /* AdvancedFormGroup.classList.toggle("collapse"); */
+    /* Fatto poi con Bootstrap Class Collapse*/ 
+    
+    SearchInput.classList.toggle("form-control-lg");
+    SearchLabel.classList.toggle("d-none");
 
 })
-
-
-
-
-let CategorySelector = document.querySelector("#CategorySelector")
-console.log(CategorySelector);
 
 

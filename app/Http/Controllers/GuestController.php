@@ -9,9 +9,21 @@ use App\Mail\ContactMail;
 class GuestController extends Controller
 {
     public function home(){   
-
+        
         return view('home'); //Questo è il nome della vista blade /resources/views/home.blade.php  
-             
+        
+    }
+    
+    public function products(){
+        
+        return view('products'); //Questo è il nome della vista blade /resources/views/home.blade.php
+        
+    }
+
+    public function categories(){
+
+    return view('categories'); //Questo è il nome della vista blade /resources/views/home.blade.php
+
     }
     
     public function contacts() {        
@@ -38,10 +50,10 @@ class GuestController extends Controller
     }
     
     public function thankyou() {
-
-        return view('thankyoupage');    
-
-    }      
         
-    }
+        return view('thankyoupage');    
+        
+    }      
     
+}
+

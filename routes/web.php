@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\RouteUri;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,10 @@ Auth::routes();
 
 Route::get('/', 'GuestController@home')->name('home'); //Questo è il "nome" della rotta
 
+Route::get('/products', 'GuestController@products')->name('products');
+
+Route::get('/categories', 'GuestController@categories')->name('categories');
+
 Route::get('/contacts', 'GuestController@contacts')->name('contacts');
-
 Route::post('/contacts/submit', 'GuestController@submit')->name('contacts.submit');
-
 Route::get('/thankyou', 'GuestController@thankyou')->name('thankyou');

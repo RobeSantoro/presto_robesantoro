@@ -37283,16 +37283,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var btnAdvanced = document.querySelector("#btnAdvanced");
-var Advanced = btnAdvanced.addEventListener('click', function () {
-  Advanced.classList.remove("d-none"); //console.log(Advanced.classList);
+var AdvancedBtn = document.querySelector("#AdvancedBtn");
+var AdvancedFormGroup = document.querySelector("#AdvancedFormGroup");
+var SearchInput = document.querySelector("#SearchInput");
+var SearchLabel = document.querySelector("#SearchLabel");
+AdvancedBtn.addEventListener('click', function () {
+  /* AdvancedFormGroup.classList.toggle("collapse"); */
 
-  /* if (Advanced. == "") {
-      Advanced.classList.add("d-none");
-  } */
+  /* Fatto poi con Bootstrap Class Collapse*/
+  SearchInput.classList.toggle("form-control-lg");
+  SearchLabel.classList.toggle("d-none");
 });
-var CategorySelector = document.querySelector("#CategorySelector");
-console.log(CategorySelector);
 
 /***/ }),
 
