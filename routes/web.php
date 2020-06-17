@@ -27,3 +27,7 @@ Route::get('/categories', 'GuestController@categories')->name('categories');
 Route::get('/contacts', 'GuestController@contacts')->name('contacts');
 Route::post('/contacts/submit', 'GuestController@submit')->name('submit');
 Route::get('/thankyou', 'GuestController@thankyou')->name('thankyou');
+
+
+
+Route::get('/cards', 'GuestController@showCards')->name('cards_route'); //Questo è il "nome" della rotta

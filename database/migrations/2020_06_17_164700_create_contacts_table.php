@@ -16,10 +16,12 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             //DSL Domain Specific Language
             $table->id();
+
             $table->string('name',100);
             $table->string('surname');
             $table->string('email')->unique();
             $table->string('mobile');
+
             $table->timestamps();
         });
     }

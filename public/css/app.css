@@ -10929,7 +10929,7 @@ a.text-dark:focus {
 }
 
 * {
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
 html,
@@ -10942,8 +10942,8 @@ body {
 
 .masthead {
   height: 100vh;
+  min-width: 320px;
   min-height: 500px;
-  background-color: #ffffff;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #3490dc), url("/img/hero-image.jpg");
   background-size: cover;
   background-position: center;

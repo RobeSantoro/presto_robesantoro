@@ -1,7 +1,7 @@
 {{-- Gli Include non necessitano di @ --}}
 
 <!--NAVBAR-->
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
+<nav class="navbar transparent navbar-expand-md shadow-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}

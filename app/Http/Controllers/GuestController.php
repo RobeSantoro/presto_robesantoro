@@ -10,26 +10,29 @@ use App\Mail\ContactMail;
 class GuestController extends Controller
 {
     public function home_function(){
-
         return view('homeView'); //Questo è il nome della vista blade /resources/views/home.blade.php
-
     }
 
     public function products(){
-
         return view('products'); //Questo è il nome della vista blade /resources/views/home.blade.php
-
     }
 
     public function categories(){
-
         return view('categories'); //Questo è il nome della vista blade /resources/views/home.blade.php
-
     }
 
     public function contacts() {
         return view('contacts');
     }
+
+    public function showCards() {
+
+        $contacts = Contact::all();
+        //dd($contacts);
+        return view('cards', compact('contacts'));
+
+    }
+
 
     public function submit(Request $request) {
 
@@ -42,7 +45,7 @@ class GuestController extends Controller
         $email= $request->input('email');
         $mobile= $request->input('mobile');
 
-        // Compact ??? cosa sono quelle stringhe nei paramtri?
+        // Compact ??? cosa sono quelle stringhe nei paramtri? Sono le variabili $name, $surname, $email...
         $contacts = compact('name','surname','email','mobile');
 
         // Spedisce la mail

@@ -22,6 +22,8 @@
         </span>
 
         <a href="{{ route('contacts') }}" class="lead d-inline-block mb-2 mx-2 gray">Contattaci</a>
+        <a href="{{ route('cards_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Cards</a>
+
     </div>
 </footer>
 
