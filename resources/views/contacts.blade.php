@@ -14,16 +14,16 @@
                 @csrf
 
                 <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome</label>
-                <input class="form-control" type="text" placeholder="Inserisci Nome" name="Nome">
+                <input class="form-control" type="text" placeholder="Inserisci Nome" name="name">
 
                 <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Cognome</label>
-                <input class="form-control" type="text" placeholder="Inserisci Cognome" name="Cognome">
+                <input class="form-control" type="text" placeholder="Inserisci Cognome" name="surname">
 
                 <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Email</label>
-                <input class="form-control" type="email" placeholder="Inserisci e-mail" name="Email">
+                <input class="form-control" type="email" placeholder="Inserisci e-mail" name="email">
 
                 <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Mobile</label>
-                <input class="form-control" type="tel" placeholder="Inserisci Tel" name="Mobile">
+                <input class="form-control" type="tel" placeholder="Inserisci Tel" name="mobile">
 
                 <button type="reset" class="btn btn-secondary mt-5 px-5">Reset</button>
                 <button type="submit" class="btn btn-primary mt-5 px-5">Invia</button>

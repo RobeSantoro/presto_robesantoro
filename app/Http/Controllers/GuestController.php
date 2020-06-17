@@ -8,16 +8,16 @@ use App\Mail\ContactMail;
 
 class GuestController extends Controller
 {
-    public function home(){   
-        
-        return view('home'); //Questo è il nome della vista blade /resources/views/home.blade.php  
-        
+    public function home(){
+
+        return view('home'); //Questo è il nome della vista blade /resources/views/home.blade.php
+
     }
-    
+
     public function products(){
-        
+
         return view('products'); //Questo è il nome della vista blade /resources/views/home.blade.php
-        
+
     }
 
     public function categories(){
@@ -25,35 +25,35 @@ class GuestController extends Controller
     return view('categories'); //Questo è il nome della vista blade /resources/views/home.blade.php
 
     }
-    
-    public function contacts() {        
-        return view('contacts');         
+
+    public function contacts() {
+        return view('contacts');
     }
-    
+
     public function submit(Request $request) {
-        
-        //dd($request->all()); 
-        
-        $Nome= $request->input('Nome');
-        $Cognome= $request->input('Cognome');
-        $Email= $request->input('Email');
-        $Mobile= $request->input('Mobile');
-        
-        $contacts = compact('Nome','Cognome','Email','Mobile');
-        
+
+        //dd($request->all());
+
+        $Nome= $request->input('name');
+        $Cognome= $request->input('surname');
+        $Email= $request->input('email');
+        $Mobile= $request->input('mobile');
+
+        $contacts = compact('name','surname','email','mobile');
+
         //dd($Nome,$Cognome,$Email,$Mobile );
-        
+
         Mail::to($Email)->send(new ContactMail($contacts));
-        
+
         return redirect(route('thankyou')); //Redirect dopo una rotta POST
-        
+
     }
-    
+
     public function thankyou() {
-        
-        return view('thankyoupage');    
-        
-    }      
-    
+
+        return view('thankyoupage');
+
+    }
+
 }
 
