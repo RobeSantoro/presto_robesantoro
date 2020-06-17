@@ -2,11 +2,11 @@
   transition: .2s;
 }
 
-html, body, main {
+html, body {
   height: 100%;
   background-color:$blue;
   padding-top: 0px !important;
-  padding-bottom: 0px !important;   
+  padding-bottom: 0px !important;
 }
 
 .masthead {
@@ -38,7 +38,7 @@ html, body, main {
   color: $white;
 }
 
-#sticky-footer {
-  flex: 1 0 auto;
+.pt-home {
+    padding-top: 20vh;
 }
 

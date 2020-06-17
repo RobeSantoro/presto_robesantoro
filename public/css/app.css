@@ -10933,8 +10933,7 @@ a.text-dark:focus {
 }
 
 html,
-body,
-main {
+body {
   height: 100%;
   background-color: #3490dc;
   padding-top: 0px !important;
@@ -10969,7 +10968,7 @@ main {
   color: #ffffff;
 }
 
-#sticky-footer {
-  flex: 1 0 auto;
+.pt-home {
+  padding-top: 20vh;
 }
 

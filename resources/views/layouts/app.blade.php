@@ -26,30 +26,17 @@
 </head>
 
 <body>
-    <div id="app">
+
+    <div id="app" class="masthead">
         
-        @include('includes.navbar')
-        
-        <main>
-            <div class="masthead">                
-                <div class="container h-100">                    
-                    <div class="row h-100 align-items-center justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-8 text-center">    
-                            <div class="row justify-content-center">
-                        
-                                @yield('content')
-                                
-                            </div>
-                            @include('includes.footer')
-                        </div>    
-                    </div>
-                </div>
-            </div>            
-        </main>
-        
-        
-        
+        @include('includes.navbar')        
+
+        @yield('content')      
+
+        @include('includes.footer')
+               
     </div>
+    
 </body>
 
 </html>
