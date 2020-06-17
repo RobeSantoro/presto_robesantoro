@@ -18,12 +18,12 @@ use Illuminate\Routing\Route as RoutingRoute;
 
 Auth::routes();
 
-Route::get('/', 'GuestController@home')->name('home'); //Questo è il "nome" della rotta
+Route::get('/', 'GuestController@home_function')->name('home_route'); //Questo è il "nome" della rotta
 
 Route::get('/products', 'GuestController@products')->name('products');
 
 Route::get('/categories', 'GuestController@categories')->name('categories');
 
 Route::get('/contacts', 'GuestController@contacts')->name('contacts');
-Route::post('/contacts/submit', 'GuestController@submit')->name('contacts.submit');
+Route::post('/contacts/submit', 'GuestController@submit')->name('submit');
 Route::get('/thankyou', 'GuestController@thankyou')->name('thankyou');

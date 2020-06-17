@@ -9,7 +9,7 @@
             <h1 class="mb-3 ">Inviaci i tuoi dati per essere ricontattato</h1>
 
             {{-- FORM --}}
-            <form method="POST" action="{{route('contacts.submit')}}">
+            <form method="POST" action="{{route('submit')}}">
 
                 @csrf
 

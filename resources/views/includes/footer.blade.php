@@ -3,7 +3,7 @@
 <!--FOOTER-->
 <footer id="" class="d-flex flex-column mt-5">
     <div class="container text-center">
-        <a href="{{ route('home') }}" class="lead d-inline-block mb-2 mx-2 gray">Home</a>
+        <a href="{{ route('home_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Home</a>
         <a href="{{ route('products') }}" class="lead d-inline-block mb-2 mx-2 gray">Prodotti</a>
 
 
