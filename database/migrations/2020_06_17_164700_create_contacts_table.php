@@ -14,8 +14,9 @@ class CreateContactsTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
+            //DSL Domain Specific Language
             $table->id();
-            $table->string('name');
+            $table->string('name',100);
             $table->string('surname');
             $table->string('email')->unique();
             $table->string('mobile');
