@@ -11,7 +11,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }} - il peggior clone di Subito.it</title>
+    <title>{{ config('app.name', 'Presto') }} - il peggior clone di Subito.it</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
