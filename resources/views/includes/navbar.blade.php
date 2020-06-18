@@ -3,7 +3,7 @@
 <!--NAVBAR-->
 <nav class="navbar transparent navbar-expand-md shadow-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ route('home_route') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

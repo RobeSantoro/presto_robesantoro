@@ -26,9 +26,9 @@ class GuestController extends Controller
     }
 
     public function showCards() {
-
-        $contacts = Contact::all();
         //dd($contacts);
+
+        $contacts = Contact::where('surname','Yates')->paginate(4);
         return view('cards', compact('contacts'));
 
     }
