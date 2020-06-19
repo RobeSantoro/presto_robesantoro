@@ -9,15 +9,15 @@ use Illuminate\Queue\SerializesModels;
 
 class ContactMail extends Mailable
 {
-    use Queueable, SerializesModels;    
-    
-    public $contacts;
+    use Queueable, SerializesModels;
 
-    public function __construct($contacts)
+    public $contact;
+
+    public function __construct($contact)
     {
-        $this->contacts = $contacts ;
+        $this->contact = $contact ;
     }
-    
+
     /**
     * Build the message.
     *
