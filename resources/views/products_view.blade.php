@@ -15,7 +15,7 @@
                     <div class="col-12 col-md-10 col-lg-8 mb-3 ">
 
                         <h1>Prodotti</h1>
-                        
+
                     </div>
 
                 </div>

@@ -20,14 +20,13 @@ Auth::routes();
 
 Route::get('/', 'GuestController@home_function')->name('home_route'); //Questo è il "nome" della rotta
 
-Route::get('/products', 'GuestController@products')->name('products');
+Route::get('/products', 'GuestController@products_function')->name('products_route');
 
-Route::get('/categories', 'GuestController@categories')->name('categories');
+Route::get('/categories', 'GuestController@categories_function')->name('categories_route');
 
-Route::get('/contacts', 'GuestController@contacts')->name('contacts');
-Route::post('/contacts/submit', 'GuestController@submit')->name('submit');
-Route::get('/thankyou', 'GuestController@thankyou')->name('thankyou');
+Route::get('/contacts', 'GuestController@contacts_function')->name('contact_route');
 
+Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
+Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
 
-
-Route::get('/cards', 'GuestController@showCards')->name('cards_route'); //Questo è il "nome" della rotta
+Route::get('/cards', 'GuestController@showCards_function')->name('cards_route'); //Questo è il "nome" della rotta

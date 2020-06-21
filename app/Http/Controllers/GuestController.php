@@ -3,44 +3,45 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
+use App\Http\Requests\ContactRequest;
 
 class GuestController extends Controller
 {
     public function home_function(){
-        return view('homeView'); //Questo è il nome della vista blade /resources/views/home.blade.php
+        return view('home_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
     }
 
-    public function products(){
-        return view('products'); //Questo è il nome della vista blade /resources/views/home.blade.php
+    public function products_function(){
+        return view('products_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
     }
 
-    public function categories(){
-        return view('categories'); //Questo è il nome della vista blade /resources/views/home.blade.php
+    public function categories_function(){
+        return view('categories_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
     }
 
-    public function contacts() {
-        return view('contacts');
+    public function contacts_function() {
+        return view('contacts_view');
     }
 
-    public function showCards() {
+    public function showCards_function() {
         //dd($contacts);
 
         $contacts = Contact::where('surname','Yates')->paginate(4);
-        return view('cards', compact('contacts'));
+        return view('cards_view', compact('contacts'));
 
     }
 
-    public function submit(Request $request) {
+    public function submit_function(ContactRequest $request) {
 
         /*
         // Creo un nuovo oggetto della classe Contact (il Model .php che sta in /App)
         $contact = new Contact;
 
         // MAGIC METHOD, L'oggetto Contact appena creato può essere anche vuoto.
-        // Cattura i dati del form, le stringhe sono il name del tag <input> nella vista blade
+        // Cattura i dati del form, le stringhe sono l'attributo name="" del tag <input> nella vista blade
         $contact->name = $request->input('name');
         $contact->surname = $request->input('surname');
         $contact->email = $request->input('email');
@@ -65,13 +66,13 @@ class GuestController extends Controller
 
         // Spedisce la mail
         Mail::to($contact->email)->send(new ContactMail($contact));
-        return redirect(route('thankyou')); //Redirect dopo una rotta POST
+        return redirect(route('thankyou_route')); //Redirect dopo una rotta POST
 
     }
 
-    public function thankyou() {
+    public function thankyou_function() {
 
-        return view('thankyoupage');
+        return view('thankyoupage_view');
 
     }
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <!--MAIN-->
-<main class="container pt-home">
+<main class="container pt-custom">
     <div class="row justify-content-center">
 
         <div id="SearchModule" class="col-12 col-sm-10 col-md-8 col-lg-6 text-center align-self-end mt-5">
