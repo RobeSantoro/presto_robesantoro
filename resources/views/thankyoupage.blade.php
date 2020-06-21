@@ -7,7 +7,7 @@
 
             <div class="col-12 text-center">
 
-                <h1>Grazie per averci contattato</h1>
+                <h1>Grazie per averci inviato i tuoi contatti</h1>
 
                 <form action="{{ route('home_route') }}">
                     <button type="submit" class="btn btn-primary btn-lg mt-4 px-5">Torna alla home</button>
