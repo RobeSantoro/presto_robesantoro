@@ -6,40 +6,50 @@
 
         <div id="ContactForm" class="col-12 text-center align-self-end">
 
-            <h1 class="mb-3 ">Inviaci i tuoi dati per essere ricontattato</h1>
 
-            {{-- FORM --}}
-            <form method="POST" action="{{ route('submit_route') }}">
-                @csrf
+            <div class="card">
 
-                <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome</label>
-                <input class="form-control" type="text" placeholder="Inserisci Nome" name="name">
 
-                <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Cognome</label>
-                <input class="form-control" type="text" placeholder="Inserisci Cognome" name="surname">
+                <div class="card-header">
+                    Inviaci i tuoi dati per essere ricontattato
+                </div>
 
-                <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Email</label>
-                <input class="form-control" type="email" placeholder="Inserisci e-mail" name="email">
+              <div class="card-body">
 
-                <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Mobile</label>
-                <input class="form-control" type="tel" placeholder="Inserisci Tel" name="mobile">
+                    {{-- FORM --}}
+                    <form method="POST" action="{{ route('submit_route') }}">
+                        @csrf
 
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome</label>
+                        <input class="form-control" type="text" placeholder="Inserisci Nome" name="name">
 
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Cognome</label>
+                        <input class="form-control" type="text" placeholder="Inserisci Cognome" name="surname">
 
-                <button type="reset" class="btn btn-secondary mt-5 px-5">Reset</button>
-                <button type="submit" class="btn btn-primary mt-5 px-5">Invia</button>
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Email</label>
+                        <input class="form-control" type="email" placeholder="Inserisci e-mail" name="email">
 
-            </form>
-            {{-- FORM --}}
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Mobile</label>
+                        <input class="form-control" type="tel" placeholder="Inserisci Tel" name="mobile">
+
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <button type="reset" class="btn btn-secondary mt-5 px-5">Reset</button>
+                        <button type="submit" class="btn btn-primary mt-5 px-5">Invia</button>
+
+                    </form>
+                    {{-- FORM --}}
+              </div>
+            </div>
 
         </div>
     </div>

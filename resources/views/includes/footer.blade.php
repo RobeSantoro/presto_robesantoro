@@ -3,27 +3,44 @@
 <!--FOOTER-->
 <footer id="" class="d-flex flex-column mt-5">
     <div class="container text-center">
-        <a href="{{ route('home_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Home</a>
-        <a href="{{ route('products_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Prodotti</a>
 
+        <button type="button" class="btn">
+            <a href="{{ route('home_route') }}"
+                class="lead mb-2 mx-2 gray">Home</a>
+        </button>
 
-        <span class="">
-            <a href="{{ route('categories_route') }}" type="button" class="lead d-inline-block mb-2 ml-2 gray">Categorie</a>
-            <a class="d-inline-block dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+        <button type="button" class="btn">
+            <a href="{{ route('products_route') }}"
+                class="lead mb-2 mx-2 gray">Prodotti</a>
+        </button>
+
+        <div class="btn-group">
+            <button type="button" class="btn mr-0">
+                <a href="{{ route('categories_route') }}"
+                class="lead mb-2 mr-0 ml-2 gray">Categorie</a>
+            </button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Motori</a>
                 <a class="dropdown-item" href="#">Market</a>
                 <a class="dropdown-item" href="#">Immobili</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Lavoro</a>
             </div>
-        </span>
+        </div>
 
-        <a href="{{ route('contact_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Contattaci</a>
-        <a href="{{ route('cards_route') }}" class="lead d-inline-block mb-2 mx-2 gray">Cards</a>
+        <button type="button" class="btn">
+            <a href="{{ route('contact_route') }}"
+                class="lead mb-2 mx-2 gray">Contattaci</a>
+        </button>
+
+
+        <button type="button" class="btn">
+            <a href="{{ route('cards_route') }}"
+                class="lead mb-2 mx-2 gray">Cards</a>
+        </button>
 
     </div>
 </footer>
-

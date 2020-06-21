@@ -10935,7 +10935,6 @@ a.text-dark:focus {
 html,
 body {
   height: 100%;
-  background-color: #3490dc;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
@@ -10944,7 +10943,7 @@ body {
   height: 100vh;
   min-width: 320px;
   min-height: 500px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #3490dc), url("/img/hero-image.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9), #1e4666), url("/img/hero-image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10970,5 +10969,30 @@ body {
 
 .pt-custom {
   padding-top: 20vh;
+}
+
+.card,
+.card-header,
+.card-body {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 15px rgba(12, 12, 12, 0.1);
+}
+
+.btn:focus,
+.btn.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.dropdown-toggle::after {
+  color: #6e6e6e;
+  display: inline-block;
+  margin-left: -10px;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.4em solid;
+  border-right: 0.4em solid transparent;
+  border-bottom: 0;
+  border-left: 0.4em solid transparent;
 }
 

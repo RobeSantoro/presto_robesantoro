@@ -18,7 +18,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 
 Auth::routes();
 
-Route::get('/', 'GuestController@home_function')->name('home_route'); //Questo è il "nome" della rotta
+Route::get('/', 'GuestController@home_function')->name('home_route'); //La stringa 'home_route' è il "nome" della rotta
 
 Route::get('/products', 'GuestController@products_function')->name('products_route');
 
@@ -29,4 +29,4 @@ Route::get('/contacts', 'GuestController@contacts_function')->name('contact_rout
 Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
 
-Route::get('/cards', 'GuestController@showCards_function')->name('cards_route'); //Questo è il "nome" della rotta
+Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');

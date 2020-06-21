@@ -17,7 +17,10 @@
                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ $contact->name }} {{ $contact->surname }}</h5>
-                    <p class="card-text">Some quick example text to build on the card title
+
+                    <p class="card-text">{{ $contact->email }}</p>
+                        <p class="card-text">
+                        Some quick example text to build on the card title
                         and make up the bulk of the card's content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>

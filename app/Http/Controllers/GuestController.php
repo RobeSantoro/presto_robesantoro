@@ -29,7 +29,7 @@ class GuestController extends Controller
     public function showCards_function() {
         //dd($contacts);
 
-        $contacts = Contact::where('surname','Yates')->paginate(4);
+        $contacts = Contact::where('surname','Yates')->paginate(3);
         return view('cards_view', compact('contacts'));
 
     }
