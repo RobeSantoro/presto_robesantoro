@@ -11,4 +11,10 @@ class Product extends Model
         'product-description',
         'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 }
