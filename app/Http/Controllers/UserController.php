@@ -24,10 +24,12 @@ class UserController extends Controller
         $product = Product::create([
 
                 'product-name' => $product->input('product-name'),
-                'product-description' => $product->input('product-description')/* ,
-                'user_id' => Auth::id() */
+                'product-description' => $product->input('product-description'),
+                'user_id' => Auth::id()
 
                 ]);
+
+                dd($product);
 
         return redirect(route('thankyou_publish_route')); //Redirect dopo una rotta POST
     }
