@@ -30,4 +30,4 @@ Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_rou
 
 Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');
 
-Route::get('/add_product', '')->name('add_product_route');
+Route::get('/add_product', 'UserController@addProduct_function')->name('add_product_route');
