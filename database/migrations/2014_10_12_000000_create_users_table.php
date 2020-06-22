@@ -11,7 +11,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() //php artisan migrate
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down() //php artisan migrate:rollback
     {
         Schema::dropIfExists('users');
     }
