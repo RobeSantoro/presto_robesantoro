@@ -29,8 +29,6 @@ class UserController extends Controller
 
                 ]);
 
-                dd($product);
-
         return redirect(route('thankyou_publish_route')); //Redirect dopo una rotta POST
     }
 
