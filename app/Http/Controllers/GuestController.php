@@ -7,6 +7,7 @@ use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
+use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
@@ -60,7 +61,8 @@ class GuestController extends Controller
             'name' => $request->input('name'),
             'surname' => $request->input('surname'),
             'email' => $request->input('email'),
-            'mobile' => $request->input('mobile')
+            'mobile' => $request->input('mobile'),
+            /* 'user_id'=> Auth::id() */
 
             ]);
 
