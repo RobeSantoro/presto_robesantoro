@@ -1,7 +1,7 @@
 {{-- Gli Include non necessitano di @ --}}
 
 <!--FOOTER-->
-<footer id="" class="d-flex flex-column mt-5">
+<footer id="" class="d-flex flex-column my-5">
     <div class="container text-center">
 
         <button type="button" class="btn">
