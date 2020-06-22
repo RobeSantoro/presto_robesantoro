@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Product;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 
 class GuestController extends Controller
 {
+
     public function home_function(){
         return view('home_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
     }
 
     public function products_function(){
-        return view('products_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
+
+        $products = Product::all();
+        return view('products_view', compact('products'));
     }
 
     public function categories_function(){
-        return view('categories_view'); //Questo è il nome della vista blade /resources/views/home.blade.php
+        return view('categories_view');
     }
 
     public function contacts_function() {
@@ -26,7 +30,6 @@ class GuestController extends Controller
     }
 
     public function showCards_function() {
-        //dd($contacts);
 
         $contacts = Contact::where('surname','Yates')->paginate(3);
         return view('cards_view', compact('contacts'));
