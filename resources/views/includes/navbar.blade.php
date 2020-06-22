@@ -45,6 +45,8 @@
                                 {{ __('Logout') }}
                             </a>
 
+                            <a class="dropdown-item" href="{{ route('add_product_route') }}">Pubblica</a>
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                 style="display: none;">
                                 @csrf
