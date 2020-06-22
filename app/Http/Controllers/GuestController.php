@@ -72,7 +72,7 @@ class GuestController extends Controller
 
     public function thankyou_function() {
 
-        return view('thankyoupage_view');
+        return view('thankyou_view');
 
     }
 

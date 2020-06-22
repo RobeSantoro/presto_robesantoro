@@ -31,3 +31,7 @@ Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_rou
 Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');
 
 Route::get('/add_product', 'UserController@addProduct_function')->name('add_product_route');
+Route::post('/add_product/publish', 'UserController@publishProduct_function')->name('publish_product_route');
+Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
+
+
