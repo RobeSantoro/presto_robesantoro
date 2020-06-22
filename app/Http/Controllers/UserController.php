@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductRequest;
 
 class UserController extends Controller
 {
@@ -19,12 +20,12 @@ class UserController extends Controller
         return view('add_product_view');
     }
 
-    public function publishProduct_function(Request $product)
+    public function publishProduct_function(ProductRequest $product)
     {
         $product = Product::create([
 
-                'product-name' => $product->input('product-name'),
-                'product-description' => $product->input('product-description'),
+                'product_name' => $product->input('product_name'),
+                'product_description' => $product->input('product_description'),
                 'user_id' => Auth::id()
 
                 ]);

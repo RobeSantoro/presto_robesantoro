@@ -18,10 +18,13 @@
                         @csrf
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto" name="product-name" value="{{ old('name') }}">
+                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
+                            name="product_name" value="{{ old('name') }}">
 
-                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Cognome" name="product-description" value="{{ old('surname') }}">
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione
+                            Prodotto</label>
+                        <input class="form-control" type="text" placeholder="Inserisci Cognome"
+                            name="product_description" value="{{ old('surname') }}">
 
 {{--                    <div class="form-group">
                             <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
@@ -33,6 +36,16 @@
                                 <option id="Lavoro">Lavoro</option>
                             </select>
                         </div> --}}
+
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <button type="submit" class="btn btn-primary mt-5 px-5">Pubblica</button>
 
