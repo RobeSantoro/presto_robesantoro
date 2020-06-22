@@ -25,8 +25,9 @@ Route::get('/products', 'GuestController@products_function')->name('products_rou
 Route::get('/categories', 'GuestController@categories_function')->name('categories_route');
 
 Route::get('/contacts', 'GuestController@contacts_function')->name('contact_route');
-
 Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
 
 Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');
+
+Route::get('/add_product', '')->name('add_product_route');
