@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Mail\ContactMail;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
-use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
