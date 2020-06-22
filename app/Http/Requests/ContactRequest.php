@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
+
+//------------------------------------------------------------------------//
+//-----------------------------VALIDATION---------------------------------//
+//------------------------------------------------------------------------//
+
 
 class ContactRequest extends FormRequest
 {
