@@ -3,14 +3,14 @@
 <!--NAVBAR-->
 <nav class="navbar transparent navbar-expand-md shadow-lg ">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home_route') }}">
+{{--         <a class="navbar-brand" href="{{ route('home_route') }}">
             {{ config('app.name', '123') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> --}}
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar-->
