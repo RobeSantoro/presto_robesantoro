@@ -30,7 +30,7 @@ class UserController extends Controller
 
                 ]);
 
-        return redirect(route('thankyou_publish_route')); //Redirect dopo una rotta POST
+        return redirect( route('thankyou_publish_route') ); //Redirect dopo una rotta POST
     }
 
     public function thankyou_publish_function()
