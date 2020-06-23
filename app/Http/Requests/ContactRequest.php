@@ -34,6 +34,8 @@ class ContactRequest extends FormRequest
             'surname' => 'required',
             'mobile' => 'required',
             'email' => 'required|email:rfc,dns',
+            'photo' => 'required'
+
 
         ];
     }
@@ -44,7 +46,8 @@ class ContactRequest extends FormRequest
     {
         return [
             'name.required' => 'Inserire Nome',
-            'name.min' => 'Inserisci un nome lungo almeno 2 caratteri'
+            'name.min' => 'Inserisci un nome lungo almeno 2 caratteri',
+            'photo.required' => 'Inserisci una tua foto'
         ];
     }
 }
