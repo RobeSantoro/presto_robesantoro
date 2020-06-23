@@ -26,7 +26,8 @@ class UserController extends Controller
 
                 'product_name' => $product->input('product_name'),
                 'product_description' => $product->input('product_description'),
-                'user_id' => Auth::id()
+                'user_id' => Auth::id(),
+                'img' => $product->file('img')->store('public/img')
 
                 ]);
 

@@ -14,29 +14,30 @@
                     <p class="text-left">Aggiungi il titolo ed una breve descrizione del prodotto</p>
 
                     {{-- FORM --}}
-                    <form method="POST" action="{{ route('publish_product_route') }}">
+                    <form method="POST" action="{{ route('publish_product_route') }}" enctype="multipart/form-data">
                         @csrf
 
-
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
-                            name="product_name" value="{{ old('name') }}">
+                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto" name="product_name" value="{{ old('name') }}">
 
-                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione
-                            Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto"
-                            name="product_description" value="{{ old('surname') }}">
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione Prodotto</label>
+                        <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto" name="product_description" value="{{ old('surname') }}">
 
-                        {{--                    <div class="form-group">
-                                <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
-                                <select class="form-control" id="CategorySelector">
-                                    <option id="All">Tutte le categorie</option>
-                                    <option id="Motori">Motori</option>
-                                    <option id="Market">Market</option>
-                                    <option id="Immobili">Immobili</option>
-                                    <option id="Lavoro">Lavoro</option>
-                                </select>
-                            </div> --}}
+                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
+                        <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img" value="{{ old('img') }}">
+
+                        {{--
+                        <div class="form-group">
+                            <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
+                            <select class="form-control" id="CategorySelector">
+                                <option id="All">Tutte le categorie</option>
+                                <option id="Motori">Motori</option>
+                                <option id="Market">Market</option>
+                                <option id="Immobili">Immobili</option>
+                                <option id="Lavoro">Lavoro</option>
+                            </select>
+                        </div> --}}
+
                         @if($errors->any())
 
                             <div class="my-4">
