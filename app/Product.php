@@ -9,7 +9,8 @@ class Product extends Model
     protected $fillable = [
         'product_name',
         'product_description',
-        'user_id'
+        'user_id',
+        'img'
     ];
 
     public function user()
