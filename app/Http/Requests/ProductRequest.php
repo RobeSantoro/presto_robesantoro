@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
 
             // La prima stringa corrisponde all'attributo name="" del tag input del form
-            'product_name' => 'required|min:2|max:16',
+            'product_name' => 'required|min:3|max:32',
             'product_description' => 'required',
 
         ];
