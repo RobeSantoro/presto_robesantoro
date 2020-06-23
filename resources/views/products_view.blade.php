@@ -2,9 +2,9 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container pt-5 mt-5">
+<div class="container pt-5">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-5">
 
         <div class="col-12 text-center mb-4">
             <h1>Tutti i Prodotti</h1>
@@ -24,7 +24,7 @@
 
                     <p class="card-text">Inserito da {{-- {{ Auth::user()->name }} --}}</p>
 
-                    <a href="#" class="btn btn-primary">Compra</a>
+                    <a href="{{ route('product_details',['id'=>$product->id]) }}" class="btn btn-primary">Dettagli</a>
 
                 </div>
             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
 
 Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');
+
+Route::get('/product/{id}', 'GuestController@product_details_function')->name('product_details');
 
 Route::get('/add_product', 'UserController@addProduct_function')->name('add_product_route');
 Route::post('/add_product/publish', 'UserController@publishProduct_function')->name('publish_product_route');
