@@ -21,6 +21,13 @@ class GuestController extends Controller
         return view('products_view', compact('products'));
     }
 
+    public function product_details_function($id)
+    {
+        $product = Product::find($id);
+        return view( 'product_details_view',compact('product') );
+
+    }
+
     public function categories_function(){
         return view('categories_view');
     }
