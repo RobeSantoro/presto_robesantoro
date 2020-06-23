@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Product;
 use App\Mail\ContactMail;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 
@@ -18,6 +19,7 @@ class GuestController extends Controller
     public function products_function(){
 
         $products = Product::all();
+        //$products = DB::table('products')->simplePaginate(3);
         return view('products_view', compact('products'));
     }
 
