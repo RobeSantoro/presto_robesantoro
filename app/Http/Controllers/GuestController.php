@@ -72,7 +72,7 @@ class GuestController extends Controller
             'surname' => $request->input('surname'),
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
-            /* 'user_id'=> Auth::id() */
+            'photo' => $request->file('photo')->store('public/photo')
 
             ]);
 
