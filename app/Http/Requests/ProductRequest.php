@@ -28,9 +28,9 @@ class ProductRequest extends FormRequest
             // La prima stringa corrisponde all'attributo name="" del tag input del form
             'product_name' => 'required|min:3|max:32',
             'product_description' => 'required',
+            'img' => 'required'
 
         ];
-
     }
 
 
@@ -40,7 +40,8 @@ class ProductRequest extends FormRequest
         return [
             'product_name.required' => 'Inserire Nome Prodotto',
             'product_name.min' => 'Inserisci un nome lungo almeno 2 caratteri',
-            'product_description.required' => 'Inserisci una descrizione'
+            'product_description.required' => 'Inserisci una descrizione',
+            'img.required' => 'Inserisci almeno una immagine'
         ];
     }
 }
