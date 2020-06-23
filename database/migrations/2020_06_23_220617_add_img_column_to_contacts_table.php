@@ -14,7 +14,7 @@ class AddImgColumnToContactsTable extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('img')->default('NULL');
+            $table->string('photo')->default('NULL');
         });
     }
 
@@ -26,7 +26,7 @@ class AddImgColumnToContactsTable extends Migration
     public function down()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->dropColumn('img');
+            $table->dropColumn('photo');
         });
     }
 }
