@@ -11,7 +11,8 @@ class Contact extends Model
         'name',
         'surname',
         'email',
-        'mobile'
+        'mobile',
+        'photo'
     ];
 
 
