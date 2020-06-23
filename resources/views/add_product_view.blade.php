@@ -18,10 +18,10 @@
                         @csrf
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto" name="product_name" value="{{ old('name') }}">
+                        <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto" name="product_name" value="{{ old('product_name') }}">
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto" name="product_description" value="{{ old('surname') }}">
+                        <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto" name="product_description" value="{{ old('product_description') }}">
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
                         <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img" value="{{ old('img') }}">
