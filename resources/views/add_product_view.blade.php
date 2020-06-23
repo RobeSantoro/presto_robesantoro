@@ -17,37 +17,40 @@
                     <form method="POST" action="{{ route('publish_product_route') }}">
                         @csrf
 
+
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
                         <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
                             name="product_name" value="{{ old('name') }}">
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione
                             Prodotto</label>
-                        <input class="form-control" type="text" placeholder="Inserisci Cognome"
+                        <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto"
                             name="product_description" value="{{ old('surname') }}">
 
-{{--                    <div class="form-group">
-                            <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
-                            <select class="form-control" id="CategorySelector">
-                                <option id="All">Tutte le categorie</option>
-                                <option id="Motori">Motori</option>
-                                <option id="Market">Market</option>
-                                <option id="Immobili">Immobili</option>
-                                <option id="Lavoro">Lavoro</option>
-                            </select>
-                        </div> --}}
-
+                        {{--                    <div class="form-group">
+                                <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
+                                <select class="form-control" id="CategorySelector">
+                                    <option id="All">Tutte le categorie</option>
+                                    <option id="Motori">Motori</option>
+                                    <option id="Market">Market</option>
+                                    <option id="Immobili">Immobili</option>
+                                    <option id="Lavoro">Lavoro</option>
+                                </select>
+                            </div> --}}
                         @if($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
+
+                            <div class="my-4">
+
+                            <ul class=" list-group">
+                                @foreach($errors->all() as $error)
+                                    <li class="list-group-item list-group-item-danger">{{ $error }}</li>
+                                @endforeach
                                 </ul>
+
                             </div>
                         @endif
 
-                        <button type="submit" class="btn btn-primary mt-5 px-5">Pubblica</button>
+                        <button type="submit" class="btn btn-primary my-3 px-5">Pubblica</button>
 
                     </form>
                     {{-- FORM --}}
