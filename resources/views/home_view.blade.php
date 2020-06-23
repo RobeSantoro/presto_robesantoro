@@ -9,7 +9,7 @@
         <div id="SearchModule" class="col-12 col-sm-10 col-md-8 col-lg-6 text-center align-self-end mt-5">
 
             <h1 class="font-weight-light display-logo gray mb-0">Pres<span class="blue">to</span></h1>
-            <p class="lead">... il peggior clone di subito.it</p>
+            <p class="lead pb-4">... il peggior clone di subito.it</p>
 
             {{-- Search INPUT --}}
             <div class="form-group">
