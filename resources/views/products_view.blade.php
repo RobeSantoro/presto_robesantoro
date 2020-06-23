@@ -22,8 +22,7 @@
 
                     <p class="card-text">{{ $product->product_description }}</p>
 
-                    <p class="card-text">Inserito da {{ Auth::user()->name }}</p>
-
+                    <p class="card-text">Inserito da {{-- {{ Auth::user()->name }} --}}</p>
 
                     <a href="#" class="btn btn-primary">Compra</a>
 
