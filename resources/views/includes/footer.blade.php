@@ -1,8 +1,8 @@
 {{-- Gli Include non necessitano di @ --}}
 
 <!--FOOTER-->
-<footer id="" class="d-flex flex-column my-5">
-    <div class="container text-center">
+<footer id="footer" class="fixed-bottom">
+    <div class="container-fluid text-center py-5">
 
         <button type="button" class="btn">
             <a href="{{ route('home_route') }}"
