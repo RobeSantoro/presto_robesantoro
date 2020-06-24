@@ -10932,6 +10932,10 @@ a.text-dark:focus {
   transition: 0.15s;
 }
 
+.no-transition {
+  transition: 0s;
+}
+
 html,
 body {
   height: 100%;
@@ -10995,9 +10999,5 @@ body {
   border-right: 0.4em solid transparent;
   border-bottom: 0;
   border-left: 0.4em solid transparent;
-}
-
-#footer {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white, white);
 }
 

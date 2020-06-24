@@ -1,7 +1,7 @@
 {{-- Gli Include non necessitano di @ --}}
 
 <!--FOOTER-->
-<footer id="footer" class="fixed-bottom">
+<footer id="" class="">
     <div class="container-fluid text-center py-5">
 
         <button type="button" class="btn">
