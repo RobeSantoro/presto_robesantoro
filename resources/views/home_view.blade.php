@@ -33,6 +33,7 @@
                 <div class="form-group">
                     <label class="gray float-left mt-3 mb-0 ml-2" for="country">Seleziona Comune</label>
                     <select sid="country" name="country" class="form-control">
+                        <option value="it">Tutti i comuni</option>
                         <option value="ag">Agrigento</option>
                         <option value="al">Alessandria</option>
                         <option value="an">Ancona</option>
