@@ -38,13 +38,6 @@ class GuestController extends Controller
         return view('contacts_view');
     }
 
-    public function showCards_function() {
-
-        $contacts = Contact::where('surname','Yates')->paginate(3);
-        return view('cards_view', compact('contacts'));
-
-    }
-
     public function submit_function(ContactRequest $request) {
 
         /*
@@ -76,17 +69,24 @@ class GuestController extends Controller
 
             ]);
 
-        // Spedisce la mail
-        Mail::to($contact->email)->send(new ContactMail($contact));
-        return redirect(route('thankyou_route')); //Redirect dopo una rotta POST
+            // Spedisce la mail
+            Mail::to($contact->email)->send(new ContactMail($contact));
+            return redirect(route('thankyou_route')); //Redirect dopo una rotta POST
 
     }
 
     public function thankyou_function() {
 
+        // Come posso passare i dati qua?
         return view('thankyou_view');
 
     }
 
+    public function showCards_function() {
+
+        $contacts = Contact::where('surname','Yates')->paginate(3);
+        return view('cards_view', compact('contacts'));
+
+    }
 }
 
