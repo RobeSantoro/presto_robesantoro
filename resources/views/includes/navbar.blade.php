@@ -3,18 +3,19 @@
 <!--NAVBAR-->
 <nav class="navbar transparent navbar-expand-md shadow-lg ">
     <div class="container">
-{{--         <a class="navbar-brand" href="{{ route('home_route') }}">
-            {{ config('app.name', '123') }}
-        </a>
+
+        <a class="navbar-brand" href="{{ route('home_route') }}">{{ config('app.name', '123') }}</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
-        </button> --}}
+        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
             <!-- Left Side Of Navbar-->
-            <ul class="navbar-nav mr-auto">
+            {{-- <ul class="navbar-nav mr-auto">
                 <li> <button type="button" class="btn">
                         <a href="{{ route('home_route') }}" class="lead mb-2 mx-2 gray">Home</a>
                     </button></li>
@@ -33,26 +34,30 @@
                 <li><button type="button" class="btn">
                         <a href="{{ route('cards_route') }}" class="lead mb-2 mx-2 gray">Cards</a>
                     </button></li>
-            </ul>
+            </ul> --}}
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if(Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link" href="{{ route('login') }}" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('Login') }}
+                    </a>
+                </li>
+                @if(Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link"
+                    href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link" href="#" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <i class="fas fa-user px-2"></i>
                             {{ Auth::user()->name }}
                             <span class="caret"></span>
                         </a>
