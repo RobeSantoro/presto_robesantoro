@@ -15,7 +15,7 @@
         <div class="row">
 
             @foreach($products as $product)
-                <div class="col-12 col-md-6 col-lg-4 mb-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
 
                     <div class="card h-100" style="width: 18rem;">
 
