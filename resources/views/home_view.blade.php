@@ -1,9 +1,8 @@
-{{-- Lavorare qui dentro. --}}
 @extends('layouts.app')
 @section('content')
 
 <!--MAIN-->
-<main  class="container pt-custom">
+<main class="container pt-custom">
     <div id="logo" class="row justify-content-center">
 
         <div id="SearchModule" class="col-12 col-sm-10 col-md-8 col-lg-6 text-center align-self-end mt-5">
@@ -156,8 +155,9 @@
         {{-- Advanced Search Buttons --}}
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center align-self-start mt-3">
             <button type="button" id="SearchBtn" class="btn btn-primary btn-lg m-2 px-5">Cerca</button>
-            <button  type="button" id="AdvancedBtn" class="btn btn-secondary btn-lg m-2 px-3" data-toggle="collapse"
-                data-target="#AdvancedFormGroup"><a href="#logo" class="text-white text-decoration-none">Avanzata</a></button>
+            <button type="button" id="AdvancedBtn" class="btn btn-secondary btn-lg m-2 px-3" data-toggle="collapse"
+                data-target="#AdvancedFormGroup"><a href="#logo"
+                    class="text-white text-decoration-none">Avanzata</a></button>
         </div>
     </div>
 

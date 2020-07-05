@@ -1,9 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+
+<!--MAIN-->
+<main class="container pt-custom">
+    <div class="row h-100 align-items-center ">
+        <div class="col-12  text-center">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
@@ -43,5 +44,5 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 @endsection

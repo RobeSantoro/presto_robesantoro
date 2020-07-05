@@ -1,12 +1,11 @@
-
 @extends('layouts.app')
 @section('content')
 
-<div class="container pt-5">
+<!--MAIN-->
+<main class="container pt-custom">
+    <div class="row h-100 align-items-center">
 
-    <div class="row justify-content-center align-items-center pt-5">
-
-        <div class="col-12 text-center d-flex justify-content-center ">
+        <div class="col-12 text-center ">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -79,6 +78,6 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 
 @endsection
