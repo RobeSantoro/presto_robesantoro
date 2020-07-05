@@ -29,7 +29,7 @@ Route::get('/contacts', 'GuestController@contacts_function')->name('contact_rout
 Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
 
-Route::get('/cards', 'GuestController@showCards_function')->name('cards_route');
+Route::get('/showContacts', 'GuestController@showContacts_function')->name('showContacts_route');
 
 Route::get('/product/{id}', 'GuestController@product_details_function')->name('product_details');
 

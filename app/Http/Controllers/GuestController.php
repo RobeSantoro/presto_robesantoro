@@ -8,6 +8,7 @@ use App\Mail\ContactMail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
+use App\Helpers\General\CollectionHelper as Helper;
 
 class GuestController extends Controller
 {
@@ -82,11 +83,18 @@ class GuestController extends Controller
 
     }
 
-    public function showCards_function() {
+    public function showContacts_function() {
+
 
         $contacts = Contact::where('surname','Yates')->paginate(3);
-        return view('cards_view', compact('contacts'));
+
+        //$contacts = Contact::all()->take(4);
+        //$contacts = Contact::all();
+        //dd($contacts , $contactsPagOK);
+
+        return view('showContacts_view', compact('contacts'));
 
     }
 }
+
 

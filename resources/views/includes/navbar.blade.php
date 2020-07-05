@@ -32,7 +32,7 @@
                             class="lead mb-2 mx-2 gray">Contattaci</a>
                     </button></li>
                 <li><button type="button" class="btn">
-                        <a href="{{ route('cards_route') }}" class="lead mb-2 mx-2 gray">Cards</a>
+                        <a href="{{ route('showContacts_route') }}" class="lead mb-2 mx-2 gray">Contatti</a>
                     </button></li>
             </ul> --}}
 
