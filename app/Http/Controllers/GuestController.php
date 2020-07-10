@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Product;
+use App\Category;
 use App\Mail\ContactMail;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
-use App\Helpers\General\CollectionHelper as Helper;
 
 class GuestController extends Controller
 {
@@ -31,9 +30,15 @@ class GuestController extends Controller
         return view('products.product_details_view', compact('product'));
     }
 
-    public function categories_function()
+    public function categories_function($name, $category_id)
     {
-        return view('categories_view');
+        $category = Category::find($category_id);                       // Restistuisc lìinterno record dell'Id cliccato
+        $products = $category->products()
+            /* ->where('is_accepted', true) */
+            ->orderBy('created_at', 'desc')
+            ->paginate(3);
+
+        return view('categories_view' , compact('category','products'));
     }
 
     public function contacts_function()

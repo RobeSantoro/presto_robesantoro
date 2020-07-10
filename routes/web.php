@@ -7,7 +7,7 @@ Auth::routes();
 
 Route::get('/', 'GuestController@home_function')->name('home_route'); //La stringa 'home_route' è il "nome" della rotta
 
-Route::get('/categories', 'GuestController@categories_function')->name('categories_route');
+Route::get('/categories/{name}/{category_id}', 'GuestController@categories_function')->name('categories_route');
 
 
 

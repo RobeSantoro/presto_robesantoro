@@ -3,7 +3,7 @@
 
 <div class="container pt-5">
 
-    <div class="row justify-content-center pt-5">
+    <div class="row justify-content-center">
         <div class="col-12 text-center mb-4">
             <h1>Contattaci</h1>
         </div>

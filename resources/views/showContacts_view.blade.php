@@ -12,7 +12,7 @@
 
         <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-            <div class="card" {{-- style="width: 18rem;" --}}>
+            <div class="card h-100" {{-- style="width: 18rem;" --}}>
 
                 @if($contact->photo != 'NULL')
                     <img class="card-img-top" src="{{ Storage::url($contact->photo) }}" alt="Card image cap">
@@ -21,6 +21,7 @@
                 @endif
 
                 <div class="card-body">
+
                     <h5 class="card-title">{{ $contact->name }} {{ $contact->surname }}</h5>
 
                     <p class="card-text">{{ $contact->email }}</p>

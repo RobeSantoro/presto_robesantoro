@@ -15,8 +15,8 @@
         </button>
 
         <div class="btn-group">
-            <button type="button" class="btn mr-0">
-                <a href="{{ route('categories_route') }}"
+            <button type="button" class="btn mr-0" data-toggle="dropdown">
+                <a href="{{-- {{ route('categories_route') }} --}}"
                 class="lead mb-2 mr-0 ml-2 gray">Categorie</a>
             </button>
             <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
@@ -24,21 +24,28 @@
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Motori</a>
-                <a class="dropdown-item" href="#">Market</a>
-                <a class="dropdown-item" href="#">Immobili</a>
-                <a class="dropdown-item" href="#">Lavoro</a>
+                @foreach($categories as $category)
+
+                    <a class="dropdown-item" href="
+                    {{ route('categories_route',
+                                [
+                                $category->name,
+                                $category->id
+                                ]) }}
+                    "> {{ $category->name }}</a>
+
+                @endforeach
             </div>
         </div>
 
         <button type="button" class="btn">
             <a href="{{ route('contact_route') }}"
-                class="lead mb-2 mx-2 gray">Contattaci</a>
+                class="lead mb-2 mx-2 gray">Diventa Revisore</a>
         </button>
 
         <button type="button" class="btn">
             <a href="{{ route('showContacts_route') }}"
-                class="lead mb-2 mx-2 gray">Contatti</a>
+                class="lead mb-2 mx-2 gray">Revisori</a>
         </button>
 
     </div>
