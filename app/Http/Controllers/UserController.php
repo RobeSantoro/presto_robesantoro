@@ -17,28 +17,27 @@ class UserController extends Controller
 
     public function addProduct_function()
     {
-        return view('add_product_view');
+        return view('products.add_product_view');
     }
 
-    public function publishProduct_function(ProductRequest $product)
+    public function publishProduct_function(ProductRequest $req)
     {
         $product = Product::create([
 
-                'product_name' => $product->input('product_name'),
-                'product_description' => $product->input('product_description'),
+                'product_name' => $req->input('product_name'),
+                'product_description' => $req->input('product_description'),
                 'user_id' => Auth::id(),
-                'img' => $product->file('img')->store('public/img')
+                'img' => $req->file('img')->store('public/img'),
+                'category_id' => $req->input('category_id')
 
                 ]);
 
-        return redirect( route('thankyou_publish_route') ); //Redirect dopo una rotta POST
+        return redirect( route('thankyou_publish_route') )->with('message' , 'Grazie per pubblicato il tuo annuncio');
     }
 
     public function thankyou_publish_function()
     {
-        return view('thankyoupublish_view');
+        return view('thankyou_view');
     }
-
-
 
 }

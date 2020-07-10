@@ -1,4 +1,3 @@
-{{-- Lavorare qui dentro. --}}
 @extends('layouts.app')
 @section('content')
 
@@ -30,10 +29,25 @@
 
                             <h5 class="card-title">{{ $product->product_name }}</h5>
                             <p class="card-text">{{ $product->product_description }}</p>
-                            <p class="card-text">Inserito da {{ $product->user->name }}</p>
                             <a href="{{ route('product_details',['id'=>$product->id]) }}"
                                 class="btn btn-primary">Dettagli</a>
 
+                            <div class="row mt-3">
+
+                                <div class="col-12">
+
+                                    <p class="small text-muted">
+                                        <a class="d-flex float-left"
+                                            href="{{ route('categories_route' {{-- , [$product->category->name, $product->category->id] --}}) }}">
+                                            {{ $product->category->name }}
+                                        </a>
+                                        <span class="d-flex float-right">
+                                            {{ $product->created_at->format('d/m/Y') }} -
+                                            {{ $product->user->name }}</span>
+                                    </p>
+
+                                </div>
+                            </div>
                         </div>
 
                     </div>

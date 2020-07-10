@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class AddUsedIdColumnToProducts extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
@@ -25,11 +20,6 @@ class AddUsedIdColumnToProducts extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()  // La funzione down è l'esatto contrario della funzione down.
     {
         Schema::table('products', function (Blueprint $table) {

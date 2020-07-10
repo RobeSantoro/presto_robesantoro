@@ -20,13 +20,14 @@
             {{-- Advanced Search --}}
             <div id="AdvancedFormGroup" class="collapse">
                 <div class="form-group">
-                    <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
-                    <select class="form-control" id="CategorySelector">
-                        <option id="All">Tutte le categorie</option>
-                        <option id="Motori">Motori</option>
-                        <option id="Market">Market</option>
-                        <option id="Immobili">Immobili</option>
-                        <option id="Lavoro">Lavoro</option>
+                    <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona
+                        Categoria</label>
+                    <select name="category_id" class="form-control" id="CategorySelector">
+                        @foreach( $categories as $category)
+                            <option value="{{ $category->id }}"
+                                {{ old('category') == $category->id ? 'selected' :'' }}>
+                                {{ $category->name }} </option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">

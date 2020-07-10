@@ -1,4 +1,3 @@
-{{-- Lavorare qui dentro. --}}
 @extends('layouts.app')
 @section('content')
 
