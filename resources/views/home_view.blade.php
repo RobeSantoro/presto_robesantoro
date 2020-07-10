@@ -10,10 +10,12 @@
             <h1 class="font-weight-light display-logo gray mb-0">Pres<span class="blue">to</span></h1>
             <p class="lead pb-4">... il peggior clone di subito.it</p>
 
+
+            <form action="{{ route('search') }}" method="GET">
             {{-- Search INPUT --}}
             <div class="form-group">
                 <label for="SearchInput" id="SearchLabel" class="gray float-left mt-3 mb-0 ml-2 d-none" ">Inserisci parole chiave</label>
-                <input id=" SearchInput" class="form-control form-control-lg" type="text"
+                <input id=" SearchInput" name="query" class="form-control form-control-lg" type="text"
                     placeholder="Cerca su Presto.it">
             </div>
 
@@ -155,7 +157,7 @@
     <div class="row justify-content-center">
         {{-- Advanced Search Buttons --}}
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center align-self-start mt-3">
-            <button type="button" id="SearchBtn" class="btn btn-primary btn-lg m-2 px-5">Cerca</button>
+            <button type="submit" id="SearchBtn" class="btn btn-primary btn-lg m-2 px-5">Cerca</button>
             <button type="button" id="AdvancedBtn" class="btn btn-secondary btn-lg m-2 px-3" data-toggle="collapse"
                 data-target="#AdvancedFormGroup"><a href="#logo"
                     class="text-white text-decoration-none">Avanzata</a></button>

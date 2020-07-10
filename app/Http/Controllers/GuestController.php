@@ -6,11 +6,21 @@ use App\Contact;
 use App\Product;
 use App\Category;
 use App\Mail\ContactMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 
 class GuestController extends Controller
 {
+
+    public function search_function (Request $request) {
+
+        $query = $request->input('query');
+        $products = Product::search($query)->get();
+
+        return view('search_result', compact('query' , 'products'));
+
+    }
 
     public function home_function()
     {

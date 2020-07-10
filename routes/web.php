@@ -1,16 +1,21 @@
 <?php
 
+use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+//SEARCH
+Route::get('/search', 'GuestController@search_function' )->name('search');
+
+//HOME
 Route::get('/', 'GuestController@home_function')->name('home_route'); //La stringa 'home_route' è il "nome" della rotta
 
+//CATEGORIES
 Route::get('/categories/{name}/{category_id}', 'GuestController@categories_function')->name('categories_route');
 
-
-
+// CONTACTS
 Route::get('/contacts', 'GuestController@contacts_function')->name('contact_route');
 Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
@@ -20,7 +25,6 @@ Route::get('/showContacts', 'GuestController@showContacts_function')->name('show
 
 
 // PRODUCT
-
 //INDEX
 Route::get('/products', 'GuestController@products_function')->name('products_route');
 //CREATE
