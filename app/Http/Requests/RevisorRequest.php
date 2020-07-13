@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 //------------------------------------------------------------------------//
 
 
-class ContactRequest extends FormRequest
+class RevisorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,15 +28,12 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-
             // La prima stringa corrisponde all'attributo name="" del tag input del form
             'name' => 'required|min:2|max:16',
             'surname' => 'required',
             'mobile' => 'required',
             'email' => 'required|email:rfc,dns',
             'photo' => 'required'
-
-
         ];
     }
 

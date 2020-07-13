@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Revisor extends Model
 {
-    // Definisco quali dovranno essere gli attributi della classe Contact
+    // Definisco quali dovranno essere gli attributi della classe Revisor
     protected $fillable = [
         'name',
         'surname',

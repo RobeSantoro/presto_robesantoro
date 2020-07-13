@@ -10,7 +10,7 @@
     </div>
 
     <div class="row justify-content-center">
-        <div id="ContactForm" class="col-12 text-center align-self-end">
+        <div id="RevisorForm" class="col-12 text-center align-self-end">
             <div class="card">
 
                 <div class="card-header">

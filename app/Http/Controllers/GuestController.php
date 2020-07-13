@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
+use App\Revisor;
 use App\Product;
 use App\Category;
-use App\Mail\ContactMail;
+use App\Mail\RevisorMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Requests\ContactRequest;
+use App\Http\Requests\RevisorRequest;
 
 class GuestController extends Controller
 {
     //HOME
     public function home_function()
     {
-        return view('home_route'); 
+        return view('home'); 
     }
 
     //SEARCH RESULT
@@ -54,7 +54,7 @@ class GuestController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(3);
 
-        return view('categories_view' , compact('category','products'));
+        return view('products.productsByCategory' , compact('category','products'));
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -62,20 +62,20 @@ class GuestController extends Controller
     // REVISORS INDEX
     public function index_revisors_function()
     {
-        $contacts = Contact::all();
-        return view('revisor.index_revisors', compact('contacts'));
+        $Revisors = Revisor::all();
+        return view('revisors.index_revisors', compact('Revisors'));
     }
 
     // REVISOR CREATE
     public function create_revisor_function()
     {
-        return view('revisor.create_revisor');
+        return view('revisors.create_revisor');
     }
 
     // REVISOR STORE
-    public function submit_function(ContactRequest $request)
+    public function submit_function(RevisorRequest $request)
     {
-        $contact = Contact::create([
+        $Revisor = Revisor::create([
             'name' => $request->input('name'),
             'surname' => $request->input('surname'),
             'email' => $request->input('email'),
@@ -83,7 +83,7 @@ class GuestController extends Controller
             'photo' => $request->file('photo')->store('public/photo')
         ]);
 
-        Mail::to($contact->email)->send(new ContactMail($contact));
+        Mail::to($Revisor->email)->send(new RevisorMail($Revisor));
 
         return redirect(route('thankyou_route'))->with('message', 'Grazie per averci contattato');
     }
