@@ -15,7 +15,7 @@
             <div class="row w-100">
 
                 @foreach($products as $product)
-                    @include('includes.product')
+                    @include('includes._product')
                 @endforeach
 
             </div>

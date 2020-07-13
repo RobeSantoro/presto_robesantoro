@@ -32,11 +32,11 @@
 
     <div id="app" class="masthead">
 
-        @include('includes.navbar')
+        @include('includes._navbar')
 
         @yield('content')
 
-        @include('includes.footer')
+        @include('includes._footer')
 
     </div>
 
