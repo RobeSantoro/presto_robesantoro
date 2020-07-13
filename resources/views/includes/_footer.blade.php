@@ -1,23 +1,20 @@
 {{-- Gli Include non necessitano di @ --}}
 
 <!--FOOTER-->
-<footer id="" class="">
+<footer id="footer">
     <div class="container-fluid text-center py-5">
 
         <button type="button" class="btn">
-            <a href="{{ route('home_route') }}"
-                class="lead mb-2 mx-2 gray">Home</a>
+            <a href="{{ route('home_route') }}" class="lead mb-2 mx-2 gray">Home</a>
         </button>
 
-        <button type="button" class="btn">
-            <a href="{{ route('products_route') }}"
+        <button type="button" class="btn"> <a href="{{ route('index_products_route') }}"
                 class="lead mb-2 mx-2 gray">Prodotti</a>
         </button>
 
         <div class="btn-group">
             <button type="button" class="btn mr-0" data-toggle="dropdown">
-                <a href="{{-- {{ route('categories_route') }} --}}"
-                class="lead mb-2 mr-0 ml-2 gray">Categorie</a>
+                <a href="" class="lead mb-2 mr-0 ml-2 gray">Categorie</a>
             </button>
             <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -27,7 +24,7 @@
                 @foreach($categories as $category)
 
                     <a class="dropdown-item" href="
-                    {{ route('categories_route',
+                    {{ route('productByCategory_route',
                                 [
                                 $category->name,
                                 $category->id
@@ -39,12 +36,12 @@
         </div>
 
         <button type="button" class="btn">
-            <a href="{{ route('contact_route') }}"
+            <a href="{{ route('revisors_create_route') }}"
                 class="lead mb-2 mx-2 gray">Diventa Revisore</a>
         </button>
 
         <button type="button" class="btn">
-            <a href="{{ route('showContacts_route') }}"
+            <a href="{{ route('revisors_index_route') }}"
                 class="lead mb-2 mx-2 gray">Revisori</a>
         </button>
 

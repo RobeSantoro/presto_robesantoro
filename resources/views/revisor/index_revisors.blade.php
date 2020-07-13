@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
 
         <div class="col-12 text-center mb-4">
-            <h1>La famiglia Yates</h1>
+            <h1>I nostri Revisori</h1>
         </div>
 
         @foreach($contacts as $contact)
 
         <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-            <div class="card h-100" {{-- style="width: 18rem;" --}}>
+            <div class="card h-100">
 
                 @if(false)
                     <img class="card-img-top" src="{{ Storage::url($contact->photo) }}" alt="Card image cap">
@@ -40,7 +40,7 @@
         {{-- Paginator Links --}}
 {{--
         <div class="col-12 d-flex justify-content-center mb-4">
-            {{ $contacts->links() }}
+            {{ $contacts ?? ''->links() }}
         </div>
   --}}
     </div>

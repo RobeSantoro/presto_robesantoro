@@ -15,12 +15,14 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function addProduct_function()
+    //CREATE PRODUCT
+    public function create_product_function()
     {
-        return view('products.add_product_view');
+        return view('products.create_product');
     }
 
-    public function publishProduct_function(ProductRequest $req)
+    //STORE PRODUCT
+    public function store_product_function(ProductRequest $req)
     {
         $product = Product::create([
 

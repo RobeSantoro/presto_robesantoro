@@ -5,7 +5,7 @@
     <div class="container">
 
         <a class="navbar-brand"
-            href="{{ route('home_route') }}">{{ config('app.name', '123') }}</a>
+            href="{{ route('home_route') }}">{{ config('app.name', 'Presto') }}</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -14,27 +14,6 @@
         </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-
-            <!-- Left Side Of Navbar-->
-            {{-- <ul class="navbar-nav mr-auto">
-                <li> <button type="button" class="btn">
-                        <a href="{{ route('home_route') }}" class="lead mb-2 mx-2 gray">Home</a>
-            </button></li>
-            <li> <button type="button" class="btn">
-                    <a href="{{ route('products_route') }}" class="lead mb-2 mx-2 gray">Prodotti</a>
-                </button></li>
-            <li> <button type="button" class="btn mr-0">
-                    <a href="{{ route('categories_route') }}"
-                        class="lead mb-2 mr-0 ml-2 gray">Categorie</a>
-                </button></li>
-            <li> <button type="button" class="btn">
-                    <a href="{{ route('contact_route') }}" class="lead mb-2 mx-2 gray">Contattaci</a>
-                </button></li>
-            <li><button type="button" class="btn">
-                    <a href="{{ route('showContacts_route') }}"
-                        class="lead mb-2 mx-2 gray">Contatti</a>
-                </button></li>
-            </ul> --}}
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -72,7 +51,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item"
-                                href="{{ route('add_product_route') }}">Pubblica</a>
+                                href="{{ route('create_product_route') }}">Pubblica</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();
                         ">{{ __('Logout') }}</a>

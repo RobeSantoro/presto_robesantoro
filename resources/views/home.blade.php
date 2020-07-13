@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-@if(session('access.denied.revisor.only'))
+{{-- @if(session('access.denied.revisor.only'))
 
 <div class="masthead">
     <div class="container h-100">
@@ -11,7 +11,7 @@
 
                 <h2>Accesso consentito solo ai revisori</h2>
 
-                <a href="{{ route('contact_route') }}" class="btn btn-primary">
+                <a href="{{ route('revisors_index_route') }}" class="btn btn-primary">
                     Diventa revisore
                 </a>
 
@@ -20,7 +20,7 @@
     </div>
 </div>
 @endif
-
+ --}}
 <!--MAIN-->
 <main class="container pt-custom">
     <div id="logo" class="row justify-content-center">

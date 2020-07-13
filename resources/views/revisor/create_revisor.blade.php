@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
         <div class="col-12 text-center mb-4">
-            <h1>Contattaci</h1>
+            <h1>Diventa Revisore</h1>
         </div>
     </div>
 
@@ -14,13 +14,13 @@
             <div class="card">
 
                 <div class="card-header">
-                    Inviaci i tuoi dati per essere ricontattato
+                    Inviaci i tuoi dati per candidarti come revisore di Presto.it
                 </div>
 
                 <div class="card-body">
 
                     {{-- FORM --}}
-                    <form method="POST" action="{{ route('submit_route') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('revisors_store_route') }}" enctype="multipart/form-data">
                         @csrf
 
                         <label class="float-left mt-2 mb-0 mx-1" for="exampleFormControlSelect1">Nome</label>

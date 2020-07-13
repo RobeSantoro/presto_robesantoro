@@ -15,10 +15,10 @@
             <p class="card-text">{{ $product->product_description }}</p>
 
             @if(Auth::user() && Auth::user()->is_revisor == true)
-                <a href="{{ route('product_details',['id'=>$product->id]) }}"
+                <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
                 class="btn btn-primary w-100">Valuta</a>
             @else
-                <a href="{{ route('product_details',['id'=>$product->id]) }}"
+                <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
                 class="btn btn-primary w-100">Dettagli</a>
             @endif
 
@@ -27,7 +27,7 @@
                 <div class="col-12">
 
                     <p class="small text-muted">
-                        <a class="d-flex float-left" href="{{ route('categories_route',
+                        <a class="d-flex float-left" href="{{ route('productByCategory_route',
                                 [
                                 $product->category->name,
                                 $product->category->id

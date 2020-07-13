@@ -13,7 +13,7 @@
                     <p class="text-left">Aggiungi il titolo ed una breve descrizione del prodotto</p>
 
                     {{-- FORM --}}
-                    <form method="POST" action="{{ route('publish_product_route') }}"
+                    <form method="POST" action="{{ route('store_product_route') }}"
                         enctype="multipart/form-data">
                         @csrf
 
