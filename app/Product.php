@@ -27,8 +27,6 @@ class Product extends Model
             'altro' => 'annuncio announcement'
         ];
 
-        // Customize array...
-
         return $array;
     }
 
@@ -42,4 +40,8 @@ class Product extends Model
         return $this->belongsTo( Category::class );
     }
 
+    static public function ToBeRevisionedCount()
+    {
+        return Product::where('is_accepted', null)->count();
+    }
 }

@@ -1,6 +1,5 @@
 <?php
 
-use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,10 +18,7 @@ Route::get('/categories/{name}/{category_id}', 'GuestController@categories_funct
 Route::get('/contacts', 'GuestController@contacts_function')->name('contact_route');
 Route::post('/contacts/submit', 'GuestController@submit_function')->name('submit_route');
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
-
 Route::get('/showContacts', 'GuestController@showContacts_function')->name('showContacts_route');
-
-
 
 // PRODUCT
 //INDEX
@@ -36,3 +32,10 @@ Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->nam
 //SHOW
 Route::get('/product/{id}', 'GuestController@product_details_function')->name('product_details');
 
+//REVISOR
+//INDEX
+Route::get('/revisor/home', 'RevisorController@index')->name('revisor.home');
+// APPROVE
+Route::post('/revisor/product/{id}/accept', 'RevisorController@accept')->name('revisor.accept');
+//REJECT
+Route::post('/revisor/product/{id}/reject', 'RevisorController@reject')->name('revisor.reject');

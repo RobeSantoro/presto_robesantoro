@@ -1,6 +1,26 @@
 @extends('layouts.app')
 @section('content')
 
+@if(session('access.denied.revisor.only'))
+
+<div class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+
+            <div class="col-12 text-center">
+
+                <h2>Accesso consentito solo ai revisori</h2>
+
+                <a href="{{ route('contact_route') }}" class="btn btn-primary">
+                    Diventa revisore
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+
 <!--MAIN-->
 <main class="container pt-custom">
     <div id="logo" class="row justify-content-center">

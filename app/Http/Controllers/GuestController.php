@@ -29,8 +29,10 @@ class GuestController extends Controller
 
     public function products_function()
     {
-        $products = Product::all();
-        //$products = DB::table('products')->simplePaginate(3);
+        $products = Product::where('is_accepted', true)
+        ->orderBy('created_at', 'desc')
+        ->paginate(3);
+
         return view('products.products_view', compact('products'));
     }
 

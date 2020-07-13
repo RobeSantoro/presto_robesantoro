@@ -13,8 +13,14 @@
             <h5 class="card-title">{{ $product->product_name }}</h5>
 
             <p class="card-text">{{ $product->product_description }}</p>
-            <a href="{{ route('product_details',['id'=>$product->id]) }}"
+
+            @if(Auth::user() && Auth::user()->is_revisor == true)
+                <a href="{{ route('product_details',['id'=>$product->id]) }}"
+                class="btn btn-primary w-100">Valuta</a>
+            @else
+                <a href="{{ route('product_details',['id'=>$product->id]) }}"
                 class="btn btn-primary w-100">Dettagli</a>
+            @endif
 
             <div class="row mt-3">
 
