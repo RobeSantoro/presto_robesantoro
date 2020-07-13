@@ -22,7 +22,7 @@ $(function() {
             init: function() {
                 $.ajax({
                     type:'GET',
-                    url: 'product/images',
+                    url: '/create/product/images',
                     data: {
                         uniqueSecret: uniqueSecret
                     },
@@ -39,7 +39,7 @@ $(function() {
                     });
                 });
             }
-            
+
         });
 
         myDropzone.on("success" , function(file, response){

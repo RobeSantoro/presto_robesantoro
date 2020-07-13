@@ -1,9 +1,10 @@
 
-require('./bootstrap');
+
+import './bootstrap';
 
 window.Dropzone = require('dropzone');
 Dropzone.autoDiscover = false;
 
-require('./productImages');
+import './productImages';
 
-require('./myScript');
+/* require('./myScript'); */

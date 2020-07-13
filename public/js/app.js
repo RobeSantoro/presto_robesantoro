@@ -41121,17 +41121,20 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
+/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_productImages__WEBPACK_IMPORTED_MODULE_1__);
 
 window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 Dropzone.autoDiscover = false;
 
-__webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
-
-__webpack_require__(/*! ./myScript */ "./resources/js/myScript.js");
+/* require('./myScript'); */
 
 /***/ }),
 
@@ -41180,31 +41183,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/myScript.js":
-/*!**********************************!*\
-  !*** ./resources/js/myScript.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(function () {
-  if ($("#logo").length > 0) {
-    var AdvancedBtn = document.querySelector("#AdvancedBtn");
-    var AdvancedFormGroup = document.querySelector("#AdvancedFormGroup");
-    var SearchInput = document.querySelector("#SearchInput");
-    var SearchLabel = document.querySelector("#SearchLabel");
-    AdvancedBtn.addEventListener('click', function () {
-      /* AdvancedFormGroup.classList.toggle("collapse"); */
-
-      /* Fatto poi con Bootstrap Class Collapse*/
-      SearchInput.classList.toggle("form-control-lg");
-      SearchLabel.classList.toggle("d-none");
-    });
-  }
-});
-
-/***/ }),
-
 /***/ "./resources/js/productImages.js":
 /*!***************************************!*\
   !*** ./resources/js/productImages.js ***!
@@ -41227,7 +41205,7 @@ $(function () {
       init: function init() {
         $.ajax({
           type: 'GET',
-          url: 'product/images',
+          url: '/create/product/images',
           data: {
             uniqueSecret: uniqueSecret
           },

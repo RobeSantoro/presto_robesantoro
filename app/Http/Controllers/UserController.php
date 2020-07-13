@@ -49,10 +49,10 @@ class UserController extends Controller
     {
         $uniqueSecret = $request->input('uniqueSecret');
 
-        $fileName = $request->input('id');
-
+        $fileName = $request->input('id');        
+        
         session()->push("removedimages.{$uniqueSecret}" , $fileName);
-
+        
         Storage::delete($fileName);
 
         return response()->json('ok!!!!!');
@@ -72,7 +72,7 @@ class UserController extends Controller
 
         foreach ($images as $image) {
             
-            $data[] = [
+            $data[] =[
                 'id' => $image,
                 'src' => Storage::url($image)
             ];

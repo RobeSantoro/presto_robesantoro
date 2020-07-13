@@ -20,7 +20,7 @@ Route::post('/create/product/images/upload', 'UserController@upload_product_imag
 //      DELETE IMAGES IN DROPZONE
 Route::delete('/product/images/remove', 'UserController@remove_product_images')->name('remove_product_images_route');
 //      SAVE IMAGE FOR VALIDATION ERRORS
-Route::get('/create/product/images', 'UserController@get_product_images')->name('product_images_route');
+Route::get('/create/product/images/', 'UserController@get_product_images')->name('product_images_route');
 
 
 // PRODUCT SHOW
