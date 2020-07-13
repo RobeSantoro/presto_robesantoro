@@ -12,7 +12,7 @@
 
         <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-            @if($product->img != 'NULL')
+            @if(false)
                 <img class="card-img-top" src="{{ Storage::url($product->img) }}" alt="Card image cap">
             @else
                 <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">

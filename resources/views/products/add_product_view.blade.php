@@ -49,8 +49,9 @@
                         @enderror
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
-                        <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img"
-                            value="{{ old('img') }}">
+
+                        {{-- <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img"
+                            value="{{ old('img') }}"> --}}
 
                         <button type="submit" class="btn btn-primary my-3 px-5">Pubblica</button>
 

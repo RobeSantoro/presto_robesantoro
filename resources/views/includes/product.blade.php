@@ -2,7 +2,7 @@
 
     <div class="card h-100" style="width: 18rem;">
 
-        @if($product->img != 'NULL')
+        @if(false)
             <img class="card-img-top" src="{{ Storage::url($product->img) }}" alt="Card image cap">
         @else
             <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">

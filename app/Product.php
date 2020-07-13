@@ -14,7 +14,6 @@ class Product extends Model
         'product_name',
         'product_description',
         'user_id',
-        'img',
         'category_id'
     ];
 

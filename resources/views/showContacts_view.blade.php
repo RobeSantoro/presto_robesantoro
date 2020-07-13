@@ -14,7 +14,7 @@
 
             <div class="card h-100" {{-- style="width: 18rem;" --}}>
 
-                @if($contact->photo != 'NULL')
+                @if(false)
                     <img class="card-img-top" src="{{ Storage::url($contact->photo) }}" alt="Card image cap">
                 @else
                     <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">

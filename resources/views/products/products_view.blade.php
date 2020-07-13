@@ -23,7 +23,7 @@
     </div>
 
     <div class="row w-100">
-        <div class="col-12">
+        <div class="col-12 justify-content-center">
             {{ $products->links() }}
         </div>
     </div>
