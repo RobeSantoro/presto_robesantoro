@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container pt-custom">
+<div class="container pt-5">
     <div class="row justify-content-center">
 
         <div id="AddProdductForm" class="col-12 text-center align-self-end">
@@ -10,12 +10,13 @@
 
             <div class="card">
                 <div class="card-body">
-                    <p class="text-left">Aggiungi il titolo ed una breve descrizione del prodotto</p>
-
+                    <h3>{{ $uniqueSecret }}</h3>
                     {{-- FORM --}}
                     <form method="POST" action="{{ route('store_product_route') }}"
                         enctype="multipart/form-data">
                         @csrf
+
+                        <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
                         <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
@@ -48,9 +49,19 @@
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                         @enderror
 
-                        <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
+                        <div class="form-group text-left">
+                            <label class="gray text-left mt-0 mb-0 ml-2" for="images">Inserisci immagini</label>
 
-                        {{-- <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img"
+                            <div class="dropzone" id="drophere"></div>
+                        </div>
+
+                        @error('images')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                        @enderror
+
+                        {{--<label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
+
+                         <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img"
                             value="{{ old('img') }}"> --}}
 
                         <button type="submit" class="btn btn-primary my-3 px-5">Pubblica</button>

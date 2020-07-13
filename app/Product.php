@@ -43,4 +43,11 @@ class Product extends Model
     {
         return Product::where('is_accepted', null)->count();
     }
+
+    public function ProductImages()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+
 }
+

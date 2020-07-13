@@ -10,7 +10,6 @@
             <div class="col-12 text-center">
 
                 <h2>Accesso consentito solo ai revisori</h2>
-
                 <a href="{{ route('revisors_index_route') }}" class="btn btn-primary">
                     Diventa revisore
                 </a>

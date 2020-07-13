@@ -28,7 +28,10 @@ class ProductRequest extends FormRequest
             // La prima stringa corrisponde all'attributo name="" del tag input del form
             'product_name' => 'required|min:3|max:32',
             'product_description' => 'required',
-            /* 'img' => 'required' */
+            /* 'img' => 'required' 
+            'user_id' => 'required',
+            'category_id' => 'required',
+            'uniqueSecret' => 'required'*/
 
         ];
     }

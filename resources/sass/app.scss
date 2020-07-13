@@ -10,7 +10,13 @@
 //Font Awesome
 @import "~font-awesome/scss/font-awesome.scss";
 
-//Custom Style
+//Dropzone
+@import '~dropzone/dist/basic';
+@import '~dropzone/dist/dropzone';
+
+//My style
 @import 'myStyle.scss';
+
+
 
 

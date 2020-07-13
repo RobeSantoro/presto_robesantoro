@@ -15,6 +15,8 @@ class Revisor extends Model
         'photo'
     ];
 
+    
+
 
 
     // mettere qua una altro fillable per user 'user_id'

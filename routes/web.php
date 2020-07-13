@@ -14,7 +14,15 @@ Route::get('/search', 'GuestController@search_function' )->name('search');
 // PRODUCT INDEX
 Route::get('/products', 'GuestController@index_products_function')->name('index_products_route');
 // PRODUCT CREATE
-Route::get('/add_product', 'UserController@create_product_function')->name('create_product_route');
+Route::get('/create/product', 'UserController@create_product_function')->name('create_product_route');
+//      ADD IMAGES TO DROPZONE
+Route::post('/create/product/images/upload', 'UserController@upload_product_images')->name('create_product_images_route');
+//      DELETE IMAGES IN DROPZONE
+Route::delete('/product/images/remove', 'UserController@remove_product_images')->name('remove_product_images_route');
+//      SAVE IMAGE FOR VALIDATION ERRORS
+Route::get('/create/product/images', 'UserController@get_product_images')->name('product_images_route');
+
+
 // PRODUCT SHOW
 Route::get('/product/{id}', 'GuestController@show_product_function')->name('show_product_route');
 // PRODUCT STORE
