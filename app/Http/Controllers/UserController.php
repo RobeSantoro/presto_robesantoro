@@ -38,7 +38,8 @@ class UserController extends Controller
 
         dispatch(new ResizeImage(
             $fileName,
-            80,80
+            120,
+            120
         ));
 
         session()->push("images.{$uniqueSecret}", $fileName);
@@ -80,7 +81,7 @@ class UserController extends Controller
 
             $data[] =[
                 'id' => $image,
-                'src' => ProductImage::getUrlByFilePath($image, 80, 80)
+                'src' => ProductImage::getUrlByFilePath($image, 120, 120)
             ];
         }
     }

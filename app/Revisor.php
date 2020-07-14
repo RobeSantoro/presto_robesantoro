@@ -13,12 +13,8 @@ class Revisor extends Model
         'email',
         'mobile',
         'photo'
-    ];
-
+    ]; 
     
-
-
-
     // mettere qua una altro fillable per user 'user_id'
 
     //protected $garded = ['']; // attributo opzionale
