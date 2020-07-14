@@ -3,7 +3,7 @@
 
 {{-- {{ dd($products) }} --}}
 
-@if($products)
+@if(count($products) > 0)
 
     <div class="container pt-5">
         <div class="row justify-content-center">

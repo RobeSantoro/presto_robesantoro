@@ -2,14 +2,37 @@
 
     <div class="card h-100" style="width: 18rem;">
 
-        @if($product->productImages)
+        @if(count($product->productImages) > 0)
 
-            @foreach ($product->productImages as $image)
-                <img class="card-img-top" src="{{ $image->getUrl(300,300) }}" alt="Card image cap">                
-            @endforeach
+            @if(count($product->productImages) > 1)
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach($product->productImages as $image)
+                            <div
+                                class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                <img src="{{ $image->getUrl(300,300) }}" class="card-img-top"
+                                    alt="{{ $product->product_description }}">
+                            </div>
+                        @endforeach
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            @else
+                <img class="card-img-top" src="{{ $product->productImages->first()->getUrl(300,300) }}"
+                    alt="{{ $product->product_description }}">
+            @endif
 
         @else
-            <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
+            <img class="card-img-top" src="https://via.placeholder.com/300" alt="Image Missing">
         @endif
 
         <div class="card-body">
@@ -20,10 +43,10 @@
 
             @if(Auth::user() && Auth::user()->is_revisor == true)
                 <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
-                class="btn btn-primary w-100">Valuta</a>
+                    class="btn btn-primary w-100">Valuta</a>
             @else
                 <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
-                class="btn btn-primary w-100">Dettagli</a>
+                    class="btn btn-primary w-100">Dettagli</a>
             @endif
 
             <div class="row mt-3">

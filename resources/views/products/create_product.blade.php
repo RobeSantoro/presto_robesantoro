@@ -22,18 +22,18 @@
                         <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
                             name="product_name" value="{{ old('product_name') }}">
 
-                        @error('product_name')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
+                        @if($errors->has('product_name'))
+                            <p class="m-0" style="color:red;" >{{ $errors->first('product_name') }}</p>
+                        @endif
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Descrizione
                             Prodotto</label>
                         <input class="form-control" type="text" placeholder="Inserisci Descrizione Prodotto"
                             name="product_description" value="{{ old('product_description') }}">
 
-                        @error('product_description')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
+                        @if($errors->has('product_description'))
+                            <p class="m-0" style="color:red;" >{{ $errors->first('product_description') }}</p>
+                        @endif
 
                         <div class="form-group">
                             <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona
@@ -45,29 +45,20 @@
                             </select>
                         </div>
 
-                        @error('product_description')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
+                        @if($errors->has('category_id'))
+                            <p class="m-0" style="color:red;" >{{ $errors->first('category_id') }}</p>
+                        @endif
 
                         <div class="form-group text-left">
                             <label class="gray text-left mt-0 mb-0 ml-2" for="images">Inserisci immagini</label>
-
                             <div class="dropzone" id="drophere"></div>
                         </div>
-
-                        @error('images')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                        @enderror
-
-                        {{--<label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Immagine</label>
-
-                         <input class="form-control" type="file" placeholder="Inserisci Nome Prodotto" name="img"
-                            value="{{ old('img') }}"> --}}
 
                         <button type="submit" class="btn btn-primary my-3 px-5">Pubblica</button>
 
                     </form>
                     {{-- FORM --}}
+
                 </div>
             </div>
 
