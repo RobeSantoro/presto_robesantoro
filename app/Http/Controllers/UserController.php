@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\ProductImage;
 use App\Http\Requests\ProductRequest;
+use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,11 @@ class UserController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}"); // "/" davanti al path?
+
+        dispatch(new ResizeImage(
+            $fileName,
+            80,80
+        ));
 
         session()->push("images.{$uniqueSecret}", $fileName);
 
@@ -70,13 +76,12 @@ class UserController extends Controller
 
         $data = [];
 
-        foreach ($images as $image) {
-            
+        foreach ($images as $image) {  
+
             $data[] =[
                 'id' => $image,
-                'src' => Storage::url($image)
+                'src' => ProductImage::getUrlByFilePath($image, 80, 80)
             ];
-
         }
     }
 
@@ -107,6 +112,12 @@ class UserController extends Controller
             $fileName = basename($image);
             $newFileName = "public/products/{$product->id}/{$fileName}";
             Storage::move($image, $newFileName);
+
+            dispatch(new ResizeImage(
+                $newFileName,
+                300,
+                300
+            ));
 
             $productImage->file = $newFileName;
             $productImage->product_id = $product->id;

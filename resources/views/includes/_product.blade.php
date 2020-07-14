@@ -2,10 +2,14 @@
 
     <div class="card h-100" style="width: 18rem;">
 
-        @if(false)
-            <img class="card-img-top" src="{{ Storage::url($product->img) }}" alt="Card image cap">
+        @if($product->productImages)
+
+            @foreach ($product->productImages as $image)
+                <img class="card-img-top" src="{{ $image->getUrl(300,300) }}" alt="Card image cap">                
+            @endforeach
+
         @else
-            <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+            <img class="card-img-top" src="https://via.placeholder.com/300" alt="Card image cap">
         @endif
 
         <div class="card-body">
