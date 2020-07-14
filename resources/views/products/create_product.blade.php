@@ -13,7 +13,7 @@
                     <h3>{{ $uniqueSecret }}</h3>
                     {{-- FORM --}}
                     <form method="POST" action="{{ route('store_product_route') }}"
-                        enctype="multipart/form-data">
+                        {{-- enctype="multipart/form-data" --}}>
                         @csrf
 
                         <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">

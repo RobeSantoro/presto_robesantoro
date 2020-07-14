@@ -14,19 +14,20 @@ Route::get('/search', 'GuestController@search_function' )->name('search');
 // PRODUCT INDEX
 Route::get('/products', 'GuestController@index_products_function')->name('index_products_route');
 // PRODUCT CREATE
-Route::get('/create/product', 'UserController@create_product_function')->name('create_product_route');
+Route::get('/product/create', 'UserController@create_product_function')->name('product.create');
+
 //      ADD IMAGES TO DROPZONE
-Route::post('/create/product/images/upload', 'UserController@upload_product_images')->name('create_product_images_route');
+Route::post('/product/images/upload', 'UserController@upload_product_images')->name('product.images.upload');
 //      DELETE IMAGES IN DROPZONE
-Route::delete('/product/images/remove', 'UserController@remove_product_images')->name('remove_product_images_route');
-//      SAVE IMAGE FOR VALIDATION ERRORS
-Route::get('/create/product/images/', 'UserController@get_product_images')->name('product_images_route');
+Route::delete('/product/images/remove', 'UserController@remove_product_images')->name('product.images.remove');
+//      GET IMAGE AFTER VALIDATION ERRORS
+Route::get('/product/images', 'UserController@get_product_images')->name('product.images');
 
 
 // PRODUCT SHOW
 Route::get('/product/{id}', 'GuestController@show_product_function')->name('show_product_route');
 // PRODUCT STORE
-Route::post('/add_product/publish', 'UserController@store_product_function')->name('store_product_route');
+Route::post('/product/store', 'UserController@store_product_function')->name('store_product_route');
 //THANKYOU
 Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
 

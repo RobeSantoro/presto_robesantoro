@@ -1,16 +1,15 @@
+const Dropzone = require("dropzone");
 
 $(function() {
     
 
     if ($("#drophere").length > 0) {
         
-        /* alert ('ci sono'); */
-
         let csrfToken = $('meta[name="csrf-token"]').attr('content');
         let uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
         
         let myDropzone = new Dropzone('#drophere' , {
-            url: '/create/product/images/upload',
+            url: '/product/images/upload',
 
             params: {
                 _token: csrfToken,
@@ -22,7 +21,7 @@ $(function() {
             init: function() {
                 $.ajax({
                     type:'GET',
-                    url: '/create/product/images',
+                    url: '/product/images',
                     data: {
                         uniqueSecret: uniqueSecret
                     },

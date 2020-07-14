@@ -41121,19 +41121,15 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
-/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_productImages__WEBPACK_IMPORTED_MODULE_1__);
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 Dropzone.autoDiscover = false;
 
+__webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
 /* require('./myScript'); */
 
 /***/ }),
@@ -41188,15 +41184,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   !*** ./resources/js/productImages.js ***!
   \***************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 
 $(function () {
   if ($("#drophere").length > 0) {
-    /* alert ('ci sono'); */
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
     var myDropzone = new Dropzone('#drophere', {
-      url: '/create/product/images/upload',
+      url: '/product/images/upload',
       params: {
         _token: csrfToken,
         uniqueSecret: uniqueSecret
@@ -41205,7 +41202,7 @@ $(function () {
       init: function init() {
         $.ajax({
           type: 'GET',
-          url: '/create/product/images',
+          url: '/product/images',
           data: {
             uniqueSecret: uniqueSecret
           },

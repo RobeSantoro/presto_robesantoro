@@ -29,67 +29,10 @@ class UserController extends Controller
         return view('products.create_product', compact('uniqueSecret'));
     }
 
-    //UPLOAD IMAGES
-    public function upload_product_images(Request $request)
-    {
-        $uniqueSecret = $request->input('uniqueSecret');
-
-        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}"); // "/" davanti al path?
-
-        dispatch(new ResizeImage(
-            $fileName,
-            120,
-            120
-        ));
-
-        session()->push("images.{$uniqueSecret}", $fileName);
-
-        return response()->json(
-            [
-                'id' => $fileName
-            ]
-        );
-    }
-
-    //DELETE IMAGE IN DROPZONE
-    public function remove_product_images(Request $request)
-    {
-        $uniqueSecret = $request->input('uniqueSecret');
-
-        $fileName = $request->input('id');        
-        
-        session()->push("removedimages.{$uniqueSecret}" , $fileName);
-        
-        Storage::delete($fileName);
-
-        return response()->json('ok!!!!!');
-
-    }
-
-    public function get_product_images(Request $request)
-    {
-        $uniqueSecret = $request->input('uniqueSecret');
-
-        $images = session()->get("images.{$uniqueSecret}", []);
-        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
-
-        $images = array_diff($images , $removedImages);
-
-        $data = [];
-
-        foreach ($images as $image) {  
-
-            $data[] =[
-                'id' => $image,
-                'src' => ProductImage::getUrlByFilePath($image, 120, 120)
-            ];
-        }
-    }
-
     //STORE PRODUCT AND IMAGES
     public function store_product_function(ProductRequest $req)
     {
-        $product = Product::create([
+        /* $product = Product::create([
 
             'product_name' => $req->input('product_name'),
             'product_description' => $req->input('product_description'),
@@ -97,7 +40,16 @@ class UserController extends Controller
             'category_id' => $req->input('category_id'),
             'uniqueSecret' => $req->input('uniqueSecret')
 
-        ]);
+        ]); */
+        
+        $product = new Product();
+
+        $product->product_name = $req->input('product_name');
+        $product->product_description = $req->input('product_description');
+        $product->user_id = Auth::id();
+        $product->category_id = $req->input('category_id');
+
+        $product->save();
 
         $uniqueSecret = $req->input('uniqueSecret');
 
@@ -131,6 +83,63 @@ class UserController extends Controller
         return redirect(route('thankyou_publish_route'))->with('message', 'Grazie per pubblicato il tuo annuncio');
     }
 
+    //UPLOAD IMAGES
+    public function upload_product_images(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}"); // "/" davanti al path?
+    
+
+        dispatch(new ResizeImage(
+            $fileName,
+            120,
+            120
+        ));
+        // dd('ciao');
+        session()->push("images.{$uniqueSecret}", $fileName);
+
+        return response()->json(
+            [
+                'id' => $fileName
+            ]
+        );
+    }
+
+    //DELETE IMAGE IN DROPZONE
+    public function remove_product_images(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->input('id');        
+        
+        session()->push("removedimages.{$uniqueSecret}" , $fileName);
+        
+        Storage::delete($fileName);
+
+        return response()->json('ok!!!!!');
+
+    }
+
+    // GET IMAGES AFTER VALIDATION ERRORS
+    public function get_product_images(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+
+        $images = array_diff($images , $removedImages);
+
+        $data = [];
+
+        foreach ($images as $image) {  
+
+            $data[] =[
+                'id' => $image,
+                'src' => ProductImage::getUrlByFilePath($image, 120, 120)
+            ];
+        }
+    }
 
 
     public function thankyou_publish_function()
