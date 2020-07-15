@@ -41,7 +41,7 @@ class UserController extends Controller
             'uniqueSecret' => $req->input('uniqueSecret')
 
         ]); */
-        
+
         $product = new Product();
 
         $product->product_name = $req->input('product_name');
@@ -89,7 +89,6 @@ class UserController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}"); // "/" davanti al path?
-    
 
         dispatch(new ResizeImage(
             $fileName,
@@ -110,11 +109,14 @@ class UserController extends Controller
     public function remove_product_images(Request $request)
     {
         $uniqueSecret = $request->input('uniqueSecret');
-        $fileName = $request->input('id');        
-        
+        $fileName = $request->input('id');
+
         session()->push("removedimages.{$uniqueSecret}" , $fileName);
-        
+
         Storage::delete($fileName);
+
+        // Ricordarsi di cancellare anche il crop
+        // Storage::delete('crop120x120_' . $fileName);
 
         return response()->json('ok!!!!!');
 
@@ -126,19 +128,22 @@ class UserController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $images = session()->get("images.{$uniqueSecret}", []);
-        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
 
         $images = array_diff($images , $removedImages);
 
         $data = [];
 
-        foreach ($images as $image) {  
+        foreach ($images as $image) {
 
             $data[] =[
                 'id' => $image,
                 'src' => ProductImage::getUrlByFilePath($image, 120, 120)
             ];
         }
+
+        return response()->json($data);
+
     }
 
 

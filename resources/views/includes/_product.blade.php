@@ -26,6 +26,7 @@
                     </a>
                 </div>
 
+
             @else
                 <img class="card-img-top" src="{{ $product->productImages->first()->getUrl(300,300) }}"
                     alt="{{ $product->product_description }}">

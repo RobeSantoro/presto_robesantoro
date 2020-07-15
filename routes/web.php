@@ -20,7 +20,7 @@ Route::get('/product/create', 'UserController@create_product_function')->name('p
 Route::post('/product/images/upload', 'UserController@upload_product_images')->name('product.images.upload');
 //      DELETE IMAGES IN DROPZONE
 Route::delete('/product/images/remove', 'UserController@remove_product_images')->name('product.images.remove');
-//      GET IMAGE AFTER VALIDATION ERRORS
+//      GET IMAGES AFTER VALIDATION ERRORS
 Route::get('/product/images', 'UserController@get_product_images')->name('product.images');
 
 
@@ -49,7 +49,7 @@ Route::post('/revisor/product/{id}/reject', 'RevisorController@reject')->name('r
 Route::get('/revisors', 'GuestController@index_revisors_function')->name('revisors_index_route');
 // REVISOR CREATE
 Route::get('/create/revisor', 'GuestController@create_revisor_function')->name('revisors_create_route');
-// REVISOR STORE 
+// REVISOR STORE
 Route::post('/store/revisor', 'GuestController@submit_function')->name('revisors_store_route');
 
 

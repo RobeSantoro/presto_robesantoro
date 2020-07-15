@@ -41190,7 +41190,8 @@ var Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist
 
 $(function () {
   if ($("#drophere").length > 0) {
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var csrfToken = $('meta[name="csrf-token"]').attr('content'); // crea la var csrfToken (la prende da app.blade.php)
+
     var uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
     var myDropzone = new Dropzone('#drophere', {
       url: '/product/images/upload',
@@ -41219,7 +41220,7 @@ $(function () {
       }
     });
     myDropzone.on("success", function (file, response) {
-      file.serverId = response.indexOf;
+      file.serverId = response.id;
     });
     myDropzone.on("removedfile", function (file) {
       $.ajax({

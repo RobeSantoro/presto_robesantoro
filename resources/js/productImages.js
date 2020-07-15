@@ -1,14 +1,15 @@
+
 const Dropzone = require("dropzone");
 
 $(function() {
-    
 
     if ($("#drophere").length > 0) {
-        
-        let csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+        let csrfToken = $('meta[name="csrf-token"]').attr('content');       // crea la var csrfToken (la prende da app.blade.php)
         let uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
-        
+
         let myDropzone = new Dropzone('#drophere' , {
+
             url: '/product/images/upload',
 
             params: {
@@ -42,7 +43,7 @@ $(function() {
         });
 
         myDropzone.on("success" , function(file, response){
-            file.serverId = response.indexOf;
+            file.serverId = response.id;
         });
 
         myDropzone.on("removedfile" , function(file){
