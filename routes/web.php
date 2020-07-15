@@ -52,6 +52,8 @@ Route::get('/create/revisor', 'GuestController@create_revisor_function')->name('
 // REVISOR STORE
 Route::post('/store/revisor', 'GuestController@submit_function')->name('revisors_store_route');
 
-
 // THANKYOU
 Route::get('/thankyou', 'GuestController@thankyou_function')->name('thankyou_route');
+
+// TEMP FEATURE TO BE REVISOR
+Route::post('/become/revisor', 'UserController@makeMeRevisor');

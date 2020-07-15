@@ -38,7 +38,7 @@
 
         <div class="card-body">
 
-            <h5 class="card-title">{{ $product->product_name }}</h5>
+            <h5 class="card-title">{{ $product->product_name }} {{ $product->id }}</h5>
 
             <p class="card-text">{{ $product->product_description }}</p>
 

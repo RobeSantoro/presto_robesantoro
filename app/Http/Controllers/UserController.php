@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Product;
 use App\ProductImage;
-use App\Http\Requests\ProductRequest;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class UserController extends Controller
 {
@@ -76,6 +79,10 @@ class UserController extends Controller
             $productImage->product_id = $product->id;
 
             $productImage->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($productImage->id));
+            dispatch(new GoogleVisionLabelImage($productImage->id));
+
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -151,4 +158,27 @@ class UserController extends Controller
     {
         return view('thankyou_view');
     }
+
+    public function makeMeRevisor()
+    {
+        $email = Auth::user()->email;
+        $user = User::where('email', $email)->first();
+
+        if ($user->is_revisor == true) {
+            $user->is_revisor = false;
+        }
+        else
+        {
+            $user->is_revisor = true;
+        }
+
+        $user->save();
+        return redirect()->back();
+
+        # come mai non funziona sto dd???
+        # dd(Auth::user()->is_revisor);
+
+
+    }
+
 }

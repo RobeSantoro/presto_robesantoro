@@ -14452,6 +14452,10 @@ body {
   padding-top: 15vh;
 }
 
+.w-49 {
+  width: 49% !important;
+}
+
 .card,
 .card-header,
 .card-body {

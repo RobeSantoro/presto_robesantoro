@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductImage extends Model
 {
+    protected $casts = [
+        'labels' => 'array'
+    ];
+
     public function product()
     {
         return $this->belongsTo(Product::class);
