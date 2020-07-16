@@ -38,32 +38,32 @@
 
         <div class="card-body">
 
-            <h5 class="card-title">{{ $product->product_name }} {{ $product->id }}</h5>
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="card-title">{{ $product->product_name }} {{ $product->id }}</h5>
+                    <p class="card-text">{{ $product->product_description }}</p>
+                </div>
+            </div>
 
-            <p class="card-text">{{ $product->product_description }}</p>
-
-            @if(Auth::user() && Auth::user()->is_revisor == true)
-                <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
-                    class="btn btn-secondary w-100">Valuta</a>
-            @else
-                <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
-                    class="btn btn-primary w-100">Dettagli</a>
-            @endif
 
             <div class="row mt-3">
-
                 <div class="col-12">
 
+                    @if(Auth::user() && Auth::user()->is_revisor == true)
+                        <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
+                            class="btn btn-secondary w-100 mb-2">Valuta</a>
+                    @else
+                        <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
+                            class="btn btn-primary w-100 mb-2">Dettagli</a>
+                    @endif
+
                     <p class="small text-muted">
-                        <a class="d-flex float-left" href="{{ route('productByCategory_route',
-                                [
-                                $product->category->name,
-                                $product->category->id
-                                ])
-                            }}"> {{ $product->category->name }} </a>
+                        <a class="d-flex float-left" href="{{ route('productByCategory_route',[$product->category->name,$product->category->id])}}">
+                            {{ $product->category->name }}
+                        </a>
                         <span class="d-flex float-right">
-                            {{ $product->created_at->format('d/m/Y') }} -
-                            {{ $product->user->name }}</span>
+                            {{ $product->created_at->format('d/m/Y') . ' - ' . $product->user->name }}
+                        </span>
                     </p>
 
                 </div>
