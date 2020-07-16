@@ -12,6 +12,7 @@ use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductRequest;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 
@@ -67,21 +68,19 @@ class UserController extends Controller
 
             $fileName = basename($image);
             $newFileName = "public/products/{$product->id}/{$fileName}";
-            Storage::move($image, $newFileName);
 
-            dispatch(new ResizeImage(
-                $newFileName,
-                300,
-                300
-            ));
+            Storage::move($image, $newFileName);
 
             $productImage->file = $newFileName;
             $productImage->product_id = $product->id;
 
             $productImage->save();
 
-            dispatch(new GoogleVisionSafeSearchImage($productImage->id));
-            dispatch(new GoogleVisionLabelImage($productImage->id));
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($productImage->id),
+                new GoogleVisionRemoveFaces($productImage->id),
+                new ResizeImage($productImage->file,300,300)
+            ])->dispatch($productImage->id);
 
         }
 

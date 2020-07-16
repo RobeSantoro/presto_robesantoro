@@ -6,7 +6,7 @@
 
             @if(count($product->productImages) > 1)
 
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="carouselMini{{ $loop->index }}" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         @foreach($product->productImages as $image)
                             <div
@@ -16,11 +16,11 @@
                             </div>
                         @endforeach
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselMini{{ $loop->index }}" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselMini{{ $loop->index }}" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -44,7 +44,7 @@
 
             @if(Auth::user() && Auth::user()->is_revisor == true)
                 <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
-                    class="btn btn-primary w-100">Valuta</a>
+                    class="btn btn-secondary w-100">Valuta</a>
             @else
                 <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
                     class="btn btn-primary w-100">Dettagli</a>
