@@ -50,10 +50,10 @@
                 <div class="col-12">
 
                     @if(Auth::user() && Auth::user()->is_revisor == true)
-                        <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
+                        <a href="{{-- {{ route('show_product_route',['id'=>$product->id]) }} --}}"
                             class="btn btn-secondary w-100 mb-2">Valuta</a>
                     @else
-                        <a href="{{ route('show_product_route',['id'=>$product->id]) }}"
+                        <a href="{{-- {{ route('show_product_route',['id'=>$product->id]) }} --}}"
                             class="btn btn-primary w-100 mb-2">Dettagli</a>
                     @endif
 

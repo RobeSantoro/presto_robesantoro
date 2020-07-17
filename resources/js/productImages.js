@@ -1,14 +1,13 @@
-
 const Dropzone = require("dropzone");
 
-$(function() {
+$(function () {
 
     if ($("#drophere").length > 0) {
 
-        let csrfToken = $('meta[name="csrf-token"]').attr('content');       // crea la var csrfToken (la prende da app.blade.php)
+        let csrfToken = $('meta[name="csrf-token"]').attr('content');
         let uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
 
-        let myDropzone = new Dropzone('#drophere' , {
+        let myDropzone = new Dropzone('#drophere', {
 
             url: '/product/images/upload',
 
@@ -19,34 +18,33 @@ $(function() {
 
             addRemoveLinks: true,
 
-            init: function() {
+            init: function () {
                 $.ajax({
-                    type:'GET',
+                    type: 'GET',
                     url: '/product/images',
                     data: {
                         uniqueSecret: uniqueSecret
                     },
                     dataType: 'json'
-                }).done(function(data){
-                    $.each(data, function(key, value){
+                }).done(function (data) {
+                    $.each(data, function (key, value) {
                         let file = {
                             serverId: value.id
                         };
 
                         myDropzone.options.addedfile.call(myDropzone, file);
                         myDropzone.options.thumbnail.call(myDropzone, file, value.src);
-
                     });
                 });
             }
 
         });
 
-        myDropzone.on("success" , function(file, response){
+        myDropzone.on("success", function (file, response) {
             file.serverId = response.id;
         });
 
-        myDropzone.on("removedfile" , function(file){
+        myDropzone.on("removedfile", function (file) {
             $.ajax({
                 type: 'DELETE',
                 url: '/product/images/remove',
@@ -59,5 +57,4 @@ $(function() {
             });
         });
     }
-
 })

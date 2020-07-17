@@ -41121,15 +41121,19 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
+/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_productImages__WEBPACK_IMPORTED_MODULE_1__);
 
 window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 Dropzone.autoDiscover = false;
 
-__webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
 /* require('./myScript'); */
 
 /***/ }),
@@ -41190,8 +41194,7 @@ var Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist
 
 $(function () {
   if ($("#drophere").length > 0) {
-    var csrfToken = $('meta[name="csrf-token"]').attr('content'); // crea la var csrfToken (la prende da app.blade.php)
-
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
     var myDropzone = new Dropzone('#drophere', {
       url: '/product/images/upload',

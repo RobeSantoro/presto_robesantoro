@@ -17,7 +17,7 @@
             @if(count($product->productImages) > 0)
             {{-- ONLY ONE IMAGE --}}
                 @if(count($product->productImages) > 1)
-                    {{-- MORE THAN ONE IMAGE --}}
+                    {{-- MORE THAN ONE IMAGE  --}}
                     <div id="carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
 
@@ -35,7 +35,7 @@
                                     <img class="card-img-top" src="{{ $image->getUrl(300,300) }}"  alt="{{ $product->product_description }}">
 
                                     @if(Auth::user() && Auth::user()->is_revisor == true)
-                                    {{-- REVISOR MULTIPLE IMAGE --}}
+                                    {{-- REVISOR MULTIPLE IMAGE  --}}
                                         <div class="px-1 my-2">
                                             @if ($image->labels)
                                                 @foreach ($image->labels as $label )
@@ -106,7 +106,7 @@
 
                     </div>
 
-                @else {{-- MORE THAN ONE IMAGE --}}
+                @else {{-- MORE THAN ONE IMAGE  --}}
                     <img class="card-img-top" src="{{ $product->productImages->first()->getUrl(300,300) }}" alt="{{ $product->product_description }}">
 
 
@@ -160,9 +160,9 @@
                         </div>
                     @endif
                 @endif {{-- MORE THAN ONE IMAGE --}}
-            @else  {{-- NO IMAGE --}}
+            @else  {{-- NO IMAGE  --}}
                 <img class="card-img-top" src="https://via.placeholder.com/300" alt="Image Missing">
-            @endif {{-- ONLY ONE IMAGE --}}
+            @endif {{-- ONLY ONE IMAGE  --}}
 
 
 

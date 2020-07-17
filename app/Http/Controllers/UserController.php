@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Product;
+use App\Revisor;
 use App\ProductImage;
 use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
@@ -18,10 +19,15 @@ use App\Jobs\GoogleVisionSafeSearchImage;
 
 class UserController extends Controller
 {
+    // MIDDLEWARE
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+    //////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// PRODUCTS CRU /////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
 
     //CREATE PRODUCT
     public function create_product_function(Request $request)
@@ -30,6 +36,7 @@ class UserController extends Controller
             'uniqueSecret',
             base_convert(sha1(uniqid(mt_rand())), 16, 36)
         );
+
         return view('products.create_product', compact('uniqueSecret'));
     }
 
@@ -58,7 +65,7 @@ class UserController extends Controller
         $uniqueSecret = $req->input('uniqueSecret');
 
         $images = session()->get("images.{$uniqueSecret}", []);
-        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
 
         $images = array_diff($images , $removedImages);
 
@@ -89,6 +96,17 @@ class UserController extends Controller
         return redirect(route('thankyou_publish_route'))->with('message', 'Grazie per pubblicato il tuo annuncio');
     }
 
+    //PRODUCT SHOW
+    public function show_product_function($id)
+    {
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
+    }
+
+    //////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////// DROPZONE //////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
+
     //UPLOAD IMAGES
     public function upload_product_images(Request $request)
     {
@@ -96,12 +114,12 @@ class UserController extends Controller
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}"); // "/" davanti al path?
 
+
         dispatch(new ResizeImage(
             $fileName,
             120,
             120
         ));
-        // dd('ciao');
         session()->push("images.{$uniqueSecret}", $fileName);
 
         return response()->json(
@@ -121,8 +139,14 @@ class UserController extends Controller
 
         Storage::delete($fileName);
 
+
+
         // Ricordarsi di cancellare anche il crop
         // Storage::delete('crop120x120_' . $fileName);
+        /* $path = dirname($filePath);
+        $filename = basename($filePath);
+
+        $file = "{$path}/crop{$w}x{$h}_{$filename}"; */
 
         return response()->json('ok!!!!!');
 
@@ -137,7 +161,7 @@ class UserController extends Controller
         $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
 
         $images = array_diff($images , $removedImages);
-
+        dd($images);
         $data = [];
 
         foreach ($images as $image) {
@@ -148,15 +172,24 @@ class UserController extends Controller
             ];
         }
 
+        dd($data);
+
         return response()->json($data);
 
     }
 
+    //////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////// THANK YOU ////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
 
     public function thankyou_publish_function()
     {
         return view('thankyou_view');
     }
+
+    //////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////// TEMP REVISOR ///////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
 
     public function makeMeRevisor()
     {
@@ -179,5 +212,13 @@ class UserController extends Controller
 
 
     }
+
+    // REVISORS INDEX
+    public function index_revisors_function()
+    {
+        $Revisors = Revisor::all();
+        return view('revisors.index_revisors', compact('Revisors'));
+    }
+
 
 }

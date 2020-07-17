@@ -10,13 +10,13 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h3>{{ $uniqueSecret }}</h3>
+
                     {{-- FORM --}}
-                    <form method="POST" action="{{ route('store_product_route') }}"
-                        {{-- enctype="multipart/form-data" --}}>
+                    <form method="POST" action="{{ route('store_product_route') }}">
                         @csrf
 
                         <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">
+                        {{-- <input type="hidden" name="_token" value="{{ Session::token() }}"> --}}
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
                         <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"
@@ -36,8 +36,7 @@
                         @endif
 
                         <div class="form-group">
-                            <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona
-                                Categoria</label>
+                            <label class="gray float-left mt-3 mb-0 ml-2" for="CategorySelector">Seleziona Categoria</label>
                             <select name="category_id" class="form-control" id="CategorySelector">
                                 @foreach ( $categories as $category)
                                     <option value="{{ $category->id }}" {{ old('category') == $category->id ? 'selected' :'' }}> {{ $category->name }} </option>
@@ -66,9 +65,4 @@
     </div>
 
 </div>
-
-
-
-
-
 @endsection

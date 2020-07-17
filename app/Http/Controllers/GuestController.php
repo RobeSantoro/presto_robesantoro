@@ -15,7 +15,7 @@ class GuestController extends Controller
     //HOME
     public function home_function()
     {
-        return view('home'); 
+        return view('home');
     }
 
     //SEARCH RESULT
@@ -58,13 +58,6 @@ class GuestController extends Controller
     }
 
     ///////////////////////////////////////////////////////////////////////////
-
-    // REVISORS INDEX
-    public function index_revisors_function()
-    {
-        $Revisors = Revisor::all();
-        return view('revisors.index_revisors', compact('Revisors'));
-    }
 
     // REVISOR CREATE
     public function create_revisor_function()
