@@ -13,3 +13,5 @@ npm-debug.log
 yarn-error.log
 /storage/*.index
 google_credential.json
+/public/js/app.js
+/public/css/app.css
