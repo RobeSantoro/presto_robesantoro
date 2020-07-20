@@ -11,8 +11,7 @@ Auth::routes();
 Route::get('/', 'GuestController@home_function')->name('home_route');
 //SEARCH
 Route::get('/search', 'GuestController@search_function' )->name('search');
-//PRODUCT SHOW
-Route::get('/product/details', 'GuestController@show_product_function')->name('product.details');
+
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -25,13 +24,14 @@ Route::get('/categories/{name}/{category_id}', 'GuestController@productByCategor
 /////////////////////////////// PRODUCT CRU //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 // PRODUCTS INDEX
-Route::get('/products', 'GuestController@index_products_function')->name('index_products_route');
+Route::get('/products', 'GuestController@products_index_function')->name('products_index_route');
 // PRODUCT CREATE
-Route::get('/product/create', 'UserController@create_product_function')->name('product.create');
-// PRODUCT SHOW
-Route::get('/product/{id}', 'UserController@show_product_function')->name('show_product_route');
+Route::get('/product/create', 'UserController@product_create_function')->name('product_create_route');
 // PRODUCT STORE
 Route::post('/product/store', 'UserController@store_product_function')->name('store_product_route');
+//PRODUCT SHOW
+Route::get('/product/{id}', 'GuestController@product_show_function')->name('product_show_route');
+
 //THANKYOU
 Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
 
@@ -62,9 +62,9 @@ Route::post('/revisor/product/{id}/reject', 'RevisorController@reject')->name('r
 ///////////////////////////////// REVISOR MANAGEMENT /////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 // REVISORS INDEX
-Route::get('/revisors/index', 'UserController@index_revisors_function')->name('revisors_index_route');
+Route::get('/revisors/index', 'UserController@revisors_index_function')->name('revisors_index_route');
 // REVISOR CREATE
-Route::get('/create/revisor', 'GuestController@create_revisor_function')->name('revisors_create_route');
+Route::get('/create/revisor', 'GuestController@revisor_create_function')->name('revisors_create_route');
 // REVISOR STORE
 Route::post('/store/revisor', 'GuestController@submit_function')->name('revisors_store_route');
 

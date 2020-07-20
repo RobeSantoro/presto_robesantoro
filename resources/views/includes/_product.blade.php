@@ -49,13 +49,14 @@
             <div class="row mt-3">
                 <div class="col-12">
 
-                    @if(Auth::user() && Auth::user()->is_revisor == true)
-                        <a href="{{-- {{ route('show_product_route',['id'=>$product->id]) }} --}}"
-                            class="btn btn-secondary w-100 mb-2">Valuta</a>
-                    @else
-                        <a href="{{-- {{ route('show_product_route',['id'=>$product->id]) }} --}}"
-                            class="btn btn-primary w-100 mb-2">Dettagli</a>
-                    @endif
+                    <a href="{{ route('product_show_route',['id'=>$product->id]) }}"
+                        class="btn btn-secondary w-100 mb-2">
+                        @if(Auth::user() && Auth::user()->is_revisor == true)
+                        Valuta
+                        @else
+                        Dettagli
+                        @endif
+                    </a>
 
                     <p class="small text-muted">
                         <a class="d-flex float-left" href="{{ route('productByCategory_route',[$product->category->name,$product->category->id])}}">

@@ -27,20 +27,20 @@ class GuestController extends Controller
     }
 
     // PRODUCTS INDEX
-    public function index_products_function()
+    public function products_index_function()
     {
         $products = Product::where('is_accepted', true)
         ->orderBy('created_at', 'desc')
         ->paginate(3);
 
-        return view('products.index_products', compact('products'));
+        return view('products.products_index', compact('products'));
     }
 
     //PRODUCT SHOW
-    public function show_product_function($id)
+    public function product_show_function($id)
     {
         $product = Product::find($id);
-        return view('products.show_product', compact('product'));
+        return view('products.product_show', compact('product'));
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -54,15 +54,15 @@ class GuestController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(3);
 
-        return view('products.productsByCategory' , compact('category','products'));
+        return view('products.products_ByCategory' , compact('category','products'));
     }
 
     ///////////////////////////////////////////////////////////////////////////
 
     // REVISOR CREATE
-    public function create_revisor_function()
+    public function revisor_create_function()
     {
-        return view('revisors.create_revisor');
+        return view('revisors.revisor_create');
     }
 
     // REVISOR STORE

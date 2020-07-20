@@ -1,5 +1,3 @@
-{{-- Questa è la cornice --}}
-
 <!doctype html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -21,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Font Awesome -->
-    {{-- <script src="https://kit.fontawesome.com/33aa664320.js" crossorigin="anonymous"></script> --}}
+    <script src="https://kit.fontawesome.com/33aa664320.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

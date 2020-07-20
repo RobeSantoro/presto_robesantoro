@@ -32,7 +32,7 @@
                     @endif
                 @else
 
-                    @if(Auth::user()->is_revisor)
+                    @if(Auth::user() && Auth::user()->is_revisor == true)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('revisor.home') }}">Revisor Home
                                 <span class="badge badge-pill badge-warning">{{ \App\Product::ToBeRevisionedCount() }}</span>
@@ -50,7 +50,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" href="{{ route('product.create') }}">Pubblica</a>
+                            <a class="dropdown-item" href="{{ route('product_create_route') }}">Pubblica</a>
 
                             {{-- TEMP FEATURE TO BE REVISOR  --}}
                             <form action="/become/revisor" method="post">

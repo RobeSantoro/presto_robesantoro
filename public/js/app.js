@@ -41121,19 +41121,15 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
-/* harmony import */ var _productImages__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_productImages__WEBPACK_IMPORTED_MODULE_1__);
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 Dropzone.autoDiscover = false;
 
+__webpack_require__(/*! ./productImages */ "./resources/js/productImages.js");
 /* require('./myScript'); */
 
 /***/ }),

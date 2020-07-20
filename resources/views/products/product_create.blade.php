@@ -16,7 +16,6 @@
                         @csrf
 
                         <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">
-                        {{-- <input type="hidden" name="_token" value="{{ Session::token() }}"> --}}
 
                         <label class="float-left mt-3 mb-0 mx-1" for="exampleFormControlSelect1">Nome Prodotto</label>
                         <input class="form-control" type="text" placeholder="Inserisci Nome Prodotto"

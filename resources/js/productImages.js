@@ -1,6 +1,6 @@
 const Dropzone = require("dropzone");
 
-$(function () {
+$(function() {
 
     if ($("#drophere").length > 0) {
 
@@ -18,7 +18,7 @@ $(function () {
 
             addRemoveLinks: true,
 
-            init: function () {
+            init: function() {
                 $.ajax({
                     type: 'GET',
                     url: '/product/images',
@@ -26,8 +26,8 @@ $(function () {
                         uniqueSecret: uniqueSecret
                     },
                     dataType: 'json'
-                }).done(function (data) {
-                    $.each(data, function (key, value) {
+                }).done(function(data) {
+                    $.each(data, function(key, value) {
                         let file = {
                             serverId: value.id
                         };
@@ -40,11 +40,11 @@ $(function () {
 
         });
 
-        myDropzone.on("success", function (file, response) {
+        myDropzone.on("success", function(file, response) {
             file.serverId = response.id;
         });
 
-        myDropzone.on("removedfile", function (file) {
+        myDropzone.on("removedfile", function(file) {
             $.ajax({
                 type: 'DELETE',
                 url: '/product/images/remove',

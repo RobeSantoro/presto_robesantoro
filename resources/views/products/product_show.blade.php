@@ -17,7 +17,7 @@
             @if(count($product->productImages) > 0)
             {{-- ONLY ONE IMAGE --}}
                 @if(count($product->productImages) > 1)
-                    {{-- MORE THAN ONE IMAGE  --}}
+                    {{-- MORE THAN ONE IMAGE --}}
                     <div id="carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
 

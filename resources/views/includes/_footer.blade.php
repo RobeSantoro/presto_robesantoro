@@ -8,7 +8,7 @@
             <a href="{{ route('home_route') }}" class="lead mb-2 mx-2 gray">Home</a>
         </button>
 
-        <button type="button" class="btn"> <a href="{{ route('index_products_route') }}"
+        <button type="button" class="btn"> <a href="{{ route('products_index_route') }}"
                 class="lead mb-2 mx-2 gray">Prodotti</a>
         </button>
 
