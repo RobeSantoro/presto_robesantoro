@@ -29,8 +29,8 @@ Route::get('/products', 'GuestController@products_index_function')->name('produc
 Route::get('/product/create', 'UserController@product_create_function')->name('product_create_route');
 // PRODUCT STORE
 Route::post('/product/store', 'UserController@store_product_function')->name('store_product_route');
-//PRODUCT SHOW
-Route::get('/product/{id}', 'GuestController@product_show_function')->name('product_show_route');
+/* //PRODUCT SHOW
+Route::get('/product/{id}', 'GuestController@product_show_function')->name('product_show_route'); */
 
 //THANKYOU
 Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
