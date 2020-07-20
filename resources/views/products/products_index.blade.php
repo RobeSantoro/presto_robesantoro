@@ -33,7 +33,7 @@
 {{-- @elseif(Auth::user() && Auth::user()->is_revisor == true) --}}
 
 @else
-    @if(Auth::user() && Auth::user()->is_revisor == true)
+    @if(Auth::user()->is_revisor == true)
         <div class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">

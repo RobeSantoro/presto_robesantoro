@@ -1,21 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
 
 <div class="container pt-5">
 
     <div class="row justify-content-center">
-
         {{-- TITOLO E DESCRIZIONE --}}
         <div class="col-12 text-center mb-4">
-            <h1>{{ $product->product_name }} {{ $product->id }}</h1>
+            <h1>{{ $product->product_name }}</h1>
             <p class="card-text mt-2 mb-1">{{ $product->product_description }}</p>
             <p class="card-text mb-1">Inserito da {{ $product->user->name }}</p>
         </div>
 
         <div class="col-12 col-md-6 col-lg-5 mb-4">
             @if(count($product->productImages) > 0)
-            {{-- ONLY ONE IMAGE --}}
+                {{-- ONLY ONE IMAGE --}}
                 @if(count($product->productImages) > 1)
                     {{-- MORE THAN ONE IMAGE --}}
                     <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -23,7 +21,8 @@
 
                             <ol class="carousel-indicators" style="list-style-type: none;">
                                 @foreach( $product->productImages as $image )
-                                    <li data-target="#carousel" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}">
+                                    <li data-target="#carousel" data-slide-to="{{ $loop->index }}"
+                                        class="{{ $loop->first ? 'active' : '' }}">
                                         <div id="square"></div>
                                     </li>
                                 @endforeach
@@ -31,15 +30,18 @@
 
                             @foreach($product->productImages as $image)
 
-                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                    <img class="card-img-top" src="{{ $image->getUrl(300,300) }}"  alt="{{ $product->product_description }}">
+                                <div
+                                    class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                    <img class="card-img-top" src="{{ $image->getUrl(300,300) }}"
+                                        alt="{{ $product->product_description }}">
 
-                                    @if(Auth::user() && Auth::user()->is_revisor == true)
-                                    {{-- REVISOR MULTIPLE IMAGE  --}}
+                                    @if(Auth::user()->is_revisor == true)
+                                        {{-- REVISOR MULTIPLE IMAGE --}}
                                         <div class="px-1 my-2">
-                                            @if ($image->labels)
-                                                @foreach ($image->labels as $label )
-                                                    {{ $label }}{{ $loop->last ? '' : ',' }} &nbsp;
+                                            @if($image->labels)
+                                                @foreach($image->labels as $label )
+                                                    {{ $label }}{{ $loop->last ? '' : ',' }}
+                                                    &nbsp;
                                                 @endforeach
                                             @endif
                                         </div>
@@ -93,28 +95,28 @@
 
                         </div>
 
-                        <a class="carousel-control-prev" href="#carousel" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carousel" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
 
                     </div>
 
-                @else {{-- MORE THAN ONE IMAGE  --}}
-                    <img class="card-img-top" src="{{ $product->productImages->first()->getUrl(300,300) }}" alt="{{ $product->product_description }}">
+                @else{{-- MORE THAN ONE IMAGE --}}
+                    <img class="card-img-top" src="{{ $product->productImages->first()->getUrl(300,300) }}"
+                        alt="{{ $product->product_description }}">
 
 
-                    @if(Auth::user() && Auth::user()->is_revisor == true)
+                    @if(Auth::user()->is_revisor == true)
                         <div class="my-2">
-                            @if ($product->productImages->first())
-                                @foreach ($product->productImages->first()->labels as $label )
-                                    {{ $label }}{{ $loop->last ? '' : ',' }} &nbsp;
+                            @if( $product->productImages )
+                                @foreach($product->productImages->labels as $label )
+                                    {{ $label }}{{ $loop->last ? '' : ',' }}
+                                    &nbsp;
                                 @endforeach
                             @endif
                         </div>
@@ -159,14 +161,12 @@
                                 aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     @endif
-                @endif {{-- MORE THAN ONE IMAGE --}}
-            @else  {{-- NO IMAGE  --}}
+                @endif{{-- MORE THAN ONE IMAGE --}}
+            @else{{-- NO IMAGE --}}
                 <img class="card-img-top" src="https://via.placeholder.com/300" alt="Image Missing">
-            @endif {{-- ONLY ONE IMAGE  --}}
+            @endif{{-- ONLY ONE IMAGE --}}
 
-
-
-            @if(Auth::user() && Auth::user()->is_revisor == true)
+            @if(Auth::user()->is_revisor == true)
 
                 <div class="row mt-3">
                     <div class="col-12">

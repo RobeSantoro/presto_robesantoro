@@ -51,7 +51,7 @@
 
                     <a href="{{ route('product_show_route',['id'=>$product->id]) }}"
                         class="btn btn-secondary w-100 mb-2">
-                        @if(Auth::user() && Auth::user()->is_revisor == true)
+                        @if(Auth::user()->is_revisor == true)
                         Valuta
                         @else
                         Dettagli
