@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
+@if ($product)
 <div class="container pt-5">
 
     <div class="row justify-content-center">
+
         {{-- TITOLO E DESCRIZIONE --}}
         <div class="col-12 text-center mb-4">
             <h1>{{ $product->product_name }}</h1>
@@ -87,8 +89,6 @@
                                                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                    @else
-
                                     @endif
                                 </div>
                             @endforeach
@@ -114,7 +114,7 @@
                     @if(Auth::user()->is_revisor == true)
                         <div class="my-2">
                             @if( $product->productImages )
-                                @foreach($product->productImages->labels as $label )
+                                @foreach($product->productImages->first()->labels as $label )
                                     {{ $label }}{{ $loop->last ? '' : ',' }}
                                     &nbsp;
                                 @endforeach
@@ -196,8 +196,7 @@
 
     </div>
 
-
 </div>
-
+@endif
 
 @endsection
