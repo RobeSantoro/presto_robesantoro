@@ -27,14 +27,6 @@ Route::get('/categories/{name}/{category_id}', 'GuestController@productByCategor
 Route::get('/products', 'GuestController@products_index_function')->name('products_index_route');
 // PRODUCT CREATE
 Route::get('/product/create', 'UserController@product_create_function')->name('product_create_route');
-// PRODUCT STORE
-Route::post('/product/store', 'UserController@store_product_function')->name('store_product_route');
-//PRODUCT SHOW
-Route::get('/product/{id}', 'GuestController@product_show_function')->name('product_show_route');
-
-//THANKYOU
-Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
-
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// DROPZONE //////////////////////////////////
@@ -46,6 +38,16 @@ Route::delete('/product/images/remove', 'UserController@remove_product_images')-
 //      GET IMAGES AFTER VALIDATION ERRORS
 Route::get('/product/images', 'UserController@get_product_images')->name('product.images');
 
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+// PRODUCT STORE
+Route::post('/product/store', 'UserController@store_product_function')->name('store_product_route');
+//PRODUCT SHOW
+Route::get('/product/{id}', 'GuestController@product_show_function')->name('product_show_route');
+
+//THANKYOU
+Route::get('/thankyou/publish', 'UserController@thankyou_publish_function')->name('thankyou_publish_route');
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// REVISOR ///////////////////////////////////
