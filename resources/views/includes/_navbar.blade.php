@@ -32,7 +32,7 @@
                     @endif
                 @else
 
-                    @if(Auth::user()->is_revisor == true)
+                   @if(Auth::user() && Auth::user()->is_revisor == true)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('revisor.home') }}">Revisor Home
                                 <span class="badge badge-pill badge-warning">{{ \App\Product::ToBeRevisionedCount() }}</span>

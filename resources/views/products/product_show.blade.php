@@ -37,7 +37,7 @@
                                     <img class="card-img-top" src="{{ $image->getUrl(300,300) }}"
                                         alt="{{ $product->product_description }}">
 
-                                    @if(Auth::user()->is_revisor == true)
+                                   @if(Auth::user() && Auth::user()->is_revisor == true)
                                         {{-- REVISOR MULTIPLE IMAGE --}}
                                         <div class="px-1 my-2">
                                             @if($image->labels)
@@ -111,7 +111,7 @@
                         alt="{{ $product->product_description }}">
 
 
-                    @if(Auth::user()->is_revisor == true)
+                   @if(Auth::user() && Auth::user()->is_revisor == true)
                         <div class="my-2">
                             @if( $product->productImages )
                                 @foreach($product->productImages->first()->labels as $label )
@@ -166,7 +166,7 @@
                 <img class="card-img-top" src="https://via.placeholder.com/300" alt="Image Missing">
             @endif{{-- ONLY ONE IMAGE --}}
 
-            @if(Auth::user()->is_revisor == true)
+           @if(Auth::user() && Auth::user()->is_revisor == true)
 
                 <div class="row mt-3">
                     <div class="col-12">
