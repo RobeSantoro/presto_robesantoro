@@ -4,7 +4,7 @@
 
 This repo is the final excercise of a 3 month coding bootcamp @ Aulab.it
 
-It's a clone of a famous italian platform for second-hand andggspospo rentals (subito.it)
+It's a clone of a famous italian platform for second-hand and rentals (subito.it)
 
 It features:
 
