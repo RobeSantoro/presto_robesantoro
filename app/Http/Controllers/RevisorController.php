@@ -14,7 +14,10 @@ class RevisorController extends Controller
 
     public function index()
     {
-        $products = Product::where('is_accepted', null)->orderBy('created_at', 'desc')->paginate(3);;
+        $products = Product::where('is_accepted', null)
+        ->orderBy('created_at', 'desc')
+        ->paginate(3);;
+
         return view('products.products_index' , compact('products'));
     }
 
