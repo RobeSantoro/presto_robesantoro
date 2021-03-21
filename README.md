@@ -14,3 +14,5 @@ It features:
 * Product Search
 * Product Categories
 * Form and mail automation
+
+### Now running on Docker
