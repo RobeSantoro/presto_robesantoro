@@ -8,14 +8,14 @@ class AddImgColumnToRevisorsTable extends Migration
 {
     public function up()
     {
-        Schema::table('Revisors', function (Blueprint $table) {
+        Schema::table('revisors', function (Blueprint $table) {
             $table->string('photo')->default('NULL');
         });
     }
 
     public function down()
     {
-        Schema::table('Revisors', function (Blueprint $table) {
+        Schema::table('revisors', function (Blueprint $table) {
             $table->dropColumn('photo');
         });
     }

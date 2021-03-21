@@ -8,7 +8,7 @@ class CreateRevisorsTable extends Migration
 {
     public function up()
     {
-        Schema::create('Revisors', function (Blueprint $table) {
+        Schema::create('revisors', function (Blueprint $table) {
 
             //DSL Domain Specific Language
             $table->id();
@@ -25,6 +25,6 @@ class CreateRevisorsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('Revisors');
+        Schema::dropIfExists('revisors');
     }
 }

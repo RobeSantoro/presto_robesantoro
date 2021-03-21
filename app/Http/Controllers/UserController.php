@@ -192,8 +192,8 @@ class UserController extends Controller
     // REVISORS INDEX
     public function revisors_index_function()
     {
-        $Revisors = Revisor::all();
-        return view('revisors.revisors_index', compact('Revisors'));
+        $revisors = Revisor::all();
+        return view('revisors.revisors_index', compact('revisors'));
     }
 
 
