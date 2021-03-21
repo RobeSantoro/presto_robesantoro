@@ -62,4 +62,14 @@ docker-compose exec app php artisan storage:link
 ```
 nano ./app/Providers/AppServiceProvider.php
 ```
-12. Open the browser at http://localhost:8000/
+12. npm install
+```
+npm install
+```
+
+13. npm run dev
+```
+npm run dev
+```
+
+14. Open the browser at http://localhost:8000/
