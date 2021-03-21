@@ -26,6 +26,9 @@
     "dependencies": {
         "font-awesome": "^4.7.0",
         "node-forge": ">=0.10.0",
-        "object-path": ">=0.11.5"
+        "object-path": ">=0.11.5",
+        "ssri": ">=8.0.1",
+        "is-svg": ">=4.2.2",
+        "node-notifier": ">=8.0.1"
     }
 }
